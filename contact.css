@@ -1,0 +1,167 @@
+/* ================================================== */
+/* CONTACT PAGE STYLES - Compatible with style.css  */
+/* ================================================== */
+
+/* --- CONTENEUR PRINCIPAL --- */
+.contact-wrapper {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  background-color: var(--light-bg);
+}
+
+/* --- FORMULAIRE --- */
+.contact-form {
+  flex: 1 1 400px;
+  background-color: var(--bg-color);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px var(--shadow-color);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.contact-form h2 {
+  color: var(--primary-green);
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid var(--shadow-color);
+  border-radius: 5px;
+  font-size: 1em;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary-green);
+  outline: none;
+}
+
+.contact-form .phone-field {
+  display: flex;
+  gap: 10px;
+}
+
+/* --- BOUTON --- */
+.contact-form button.btn {
+  background-color: var(--primary-green);
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.3s ease;
+}
+
+.contact-form button.btn:hover {
+  background-color: var(--primary-green-dark);
+}
+
+/* --- CHECKBOX NEWSLETTER SUR UNE LIGNE --- */
+label.newsletter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 0.95em;
+  color: var(--text-color);
+}
+
+label.newsletter input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary-green);
+  cursor: pointer;
+}
+
+/* --- INFORMATIONS DE CONTACT --- */
+.contact-info {
+  flex: 1 1 400px;
+  background-color: var(--bg-color);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px var(--shadow-color);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.contact-info h2 {
+  color: var(--primary-green);
+  margin-bottom: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact-info p,
+.contact-info a.link {
+  font-size: 0.95em;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.contact-info a.link:hover {
+  color: var(--primary-green-dark);
+}
+
+/* --- MAP --- */
+.map-container {
+  margin-top: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 250px;
+  border: 0;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .contact-wrapper {
+    flex-direction: column;
+  }
+}
+/* Champ honeypot invisible */
+.honeypot {
+  position: absolute;   /* Hors flux normal */
+  left: -9999px;        /* Hors écran */
+  top: -9999px;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  visibility: hidden;
+  
+/* --- ALIGNE LA CASE A COCHER ET LE TEXTE SUR LA MEME LIGNE --- */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.newsletter input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary-green);
+  cursor: pointer;
+  margin-right: 10px; /* Espacement entre la case et le texte */
+  vertical-align: middle;
+}
+
+.newsletter p {
+  margin: 0; /* Élimine la marge par défaut */
+  font-size: 0.95em;
+  color: var(--text-color);
+}
+textarea#message {
+  font-style: italic;
+}
