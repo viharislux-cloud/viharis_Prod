@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -96,12 +97,7 @@
             <label id="captcha-label" for="captcha">Entrez le résultat de : <strong>0 + 0</strong></label>
             <input type="text" id="captcha" name="captcha" placeholder="Réponse" required>
 
-            <div class="checkbox-container">
-              <label class="newsletter" for="newsletter">
-                <input type="checkbox" id="newsletter" name="newsletter" value="Oui">
-                <p>Je souhaite m’abonner à la newsletter</p>
-              </label>
-            </div>
+       
 
             <button type="submit" class="btn">Envoyer</button>
           </form>
@@ -179,7 +175,7 @@
           });
         </script>
 
-        <!-- COORDONNÉES -->
+      <!-- COLONNE DROITE : CARTE + COORDONNÉES + NEWSLETTER -->
         <div class="contact-info">
           <h2>Nos coordonnées</h2>
           <p><strong>Adresse :</strong><br>13 Am Sellerlach, 8525 Calmus Saeul, Luxembourg</p>
@@ -194,6 +190,72 @@
               style="border:0;" 
               allowfullscreen="" 
               loading="lazy"></iframe>
+          </div>
+
+          <!-- NEWSLETTER DANS LA MÊME COLONNE -->
+          <div class="newsletter-in-col">
+            <h2 id="newsletter-title">Inscrivez-vous à notre newsletter</h2>
+            <p>Recevez nos conseils bien-être et nos offres exclusives directement dans votre boîte mail.</p>
+
+ <!-- Formulaire MailerLite stylé -->
+  <div id="mlb2-32645520" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-32645520">
+    <div class="ml-form-align-center">
+      <!-- Formulaire d'inscription -->
+      <form id="ml-form" class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1885164/forms/169539352397874815/subscribe" method="post" target="_blank">
+        <div class="ml-form-fieldRow">
+          <input type="email" class="form-control" name="fields[email]" placeholder="Votre email" autocomplete="email" required>
+ 
+		</div>
+        <p></p>
+          <button type="submit" class="btn">S'inscrire</button>
+		 
+        
+        <input type="hidden" name="ml-submit" value="1">
+      </form>
+      <!-- Message de succès -->
+      <div id="success-message" class="ml-form-success">
+        <h4>Merci pour votre inscription !</h4>
+        <p>Vous avez bien rejoint notre liste d'abonnés.</p>
+      </div>
+    </div>
+  </div>
+   
+
+  <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
+
+  <!-- Script pour gérer la soumission du formulaire et l'affichage du message de succès -->
+  <script>
+    document.getElementById('ml-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Empêche le formulaire d'être soumis immédiatement
+
+      var emailInput = document.querySelector('[name="fields[email]"]');
+      var email = emailInput.value;
+
+      // Vérifier que l'email est valide
+      if (email && validateEmail(email)) {
+        // Simuler la soumission du formulaire (donnée envoyée à MailerLite)
+        setTimeout(function() {
+          // Si la soumission est réussie, afficher le message de succès
+          document.getElementById('mlb2-32645520').innerHTML = `
+            <div id="success-message" class="ml-form-success">
+              <h4>Merci pour votre inscription !</h4>
+              <p>Vous avez bien rejoint notre liste d'abonnés.</p>
+            </div>
+          `;
+        }, 1000); // Simulation de délai de traitement
+      } else {
+        alert('Veuillez entrer un email valide.');
+      }
+    });
+
+    // Fonction pour valider le format de l'email
+    function validateEmail(email) {
+      var re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      return re.test(email);
+    }
+  </script>
+	 <!-- fin NEWSLETTER code-->
+	 
           </div>
         </div>
 
