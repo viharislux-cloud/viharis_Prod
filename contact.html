@@ -92,14 +92,32 @@
             </select>
 
             <textarea id="message" name="message" rows="6" placeholder="Votre message" required></textarea>
-
+			
+			
             <!-- CAPTCHA basé sur une somme -->
-            <label id="captcha-label" for="captcha">Entrez le résultat de : <strong>0 + 0</strong></label>
-            <input type="text" id="captcha" name="captcha" placeholder="Réponse" required>
+<form>
+  <label id="captcha-label" for="captcha">Entrez le résultat de : <strong>0 + 0</strong></label>
+  <input type="text" id="captcha" name="captcha" placeholder="Réponse" required>
 
-       
+  <label class="checkbox-line">
+    <input type="checkbox" id="first_contact" name="first_contact">
+    <span>Inscrivez-vous à notre News Letter</span>
+  </label>
 
-            <button type="submit" class="btn">Envoyer</button>
+  <button type="submit" class="btn">Envoyer</button>
+</form>
+
+<style>
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* espace entre les éléments */
+  }
+
+  .btn {
+    display: block;
+  }
+</style>
           </form>
 
           <p style="font-size: 0.9em; color: #555;">
@@ -214,6 +232,7 @@
                 <li><a href="apropos.html">À propos</a></li>
                 <li><a href="prestations.html">Offres & Tarif</a></li>
                 <li><a href="contact.html">Contact</a></li>
+			  <li><a href="newslettre.html">News letter</a></li>
             </ul>
 			
 	
@@ -235,6 +254,7 @@
             <h4>Contactez-nous</h4>
 			  <ul>
 			  <li><a href="contact.html">Contact</a></li>
+			  <li><a href="newslettre.html">News letter</a></li>
 			  </ul>
         </div>
 
