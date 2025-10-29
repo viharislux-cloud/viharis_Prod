@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -10,13 +9,13 @@
   <!-- 🔒 Sécurité front-end -->
   <meta http-equiv="Content-Security-Policy"
         content="
-          default-src 'self';
-          script-src 'self' https://cdn.jsdelivr.net https://maps.googleapis.com;
+          default-src 'none';
+          script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline' https://maps.googleapis.com;
           style-src 'self' https://fonts.googleapis.com https://maps.googleapis.com;
           font-src 'self' https://fonts.gstatic.com;
           img-src 'self' data: https:;
           connect-src 'self' https://api.emailjs.com;
-          frame-src https://www.google.com https://maps.google.com;
+          frame-src https://www.google.com https://maps.google.com https://www.google.com/maps;
           frame-ancestors 'self';
         ">
   <meta http-equiv="Strict-Transport-Security"
@@ -29,13 +28,11 @@
   <link rel="stylesheet" href="contact.css">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 
-  <!-- Optionnel : SRI pour EmailJS -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
-          integrity="sha384-..." crossorigin="anonymous"></script>
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
 
 <body>
-
   <!-- HEADER -->
   <header class="header">
     <div class="logo">
@@ -83,7 +80,7 @@
             <input type="hidden" name="from_name" value="Viharis.lu">
             <input type="hidden" name="from_email" value="Viharisnoreply@gmail.com">
 
-            <!-- Champ honeypot anti-spam -->
+            <!-- Honeypot anti-spam -->
             <input type="text" name="website" class="honeypot" autocomplete="off" tabindex="-1" placeholder="Ne pas remplir">
 
             <input type="text" id="nom" name="user_name" placeholder="Prénom et nom" required>
@@ -107,32 +104,17 @@
             </select>
 
             <textarea id="message" name="message" rows="6" placeholder="Votre message" required></textarea>
-			
-			
+
             <!-- CAPTCHA basé sur une somme -->
-<form>
-  <label id="captcha-label" for="captcha">Entrez le résultat de : <strong>0 + 0</strong></label>
-  <input type="text" id="captcha" name="captcha" placeholder="Réponse" required>
+            <label id="captcha-label" for="captcha">Entrez le résultat de : <strong>0 + 0</strong></label>
+            <input type="text" id="captcha" name="captcha" placeholder="Réponse" required>
 
-  <label class="checkbox-line">
-    <input type="checkbox" id="first_contact" name="first_contact">
-    <span>Inscrivez-vous à notre News Letter</span>
-  </label>
+            <label class="checkbox-line">
+              <input type="checkbox" id="first_contact" name="first_contact">
+              <span>Inscrivez-vous à notre News Letter</span>
+            </label>
 
-  <button type="submit" class="btn">Envoyer</button>
-</form>
-
-<style>
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* espace entre les éléments */
-  }
-
-  .btn {
-    display: block;
-  }
-</style>
+            <button type="submit" class="btn">Envoyer</button>
           </form>
 
           <p style="font-size: 0.9em; color: #555;">
@@ -143,72 +125,7 @@
           </p>
         </div>
 
-        <!-- SCRIPT EMAILJS -->
-        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-        <script>
-          emailjs.init("5GEa8ZEJk5XnQsw3i");
-          const form = document.getElementById("contact-form");
-          const button = form.querySelector("button");
-
-          // Génération de l'addition pour le captcha
-          const generateCaptcha = () => {
-            const num1 = Math.floor(Math.random() * 10);
-            const num2 = Math.floor(Math.random() * 10);
-            const result = num1 + num2;
-            const captchaLabel = document.getElementById("captcha-label");
-            captchaLabel.innerHTML = `Entrez le résultat de : <strong>${num1} + ${num2}</strong>`;
-            return result;
-          };
-
-          // Stocke le résultat de la somme pour la vérification
-          let captchaAnswer = generateCaptcha();
-
-          form.addEventListener("submit", function(e) {
-            e.preventDefault();
-
-            // 🧩 Vérification honeypot
-            const honeypot = form.querySelector("[name='website']");
-            if (honeypot.value) {
-              console.warn("Spam détecté, envoi annulé.");
-              return; // on arrête ici sans envoyer
-            }
-
-            // Vérification du captcha
-            const userCaptcha = parseInt(form.captcha.value);
-            if (userCaptcha !== captchaAnswer) {
-              alert("❌ Mauvaise réponse au captcha !");
-              return; // on arrête ici sans envoyer
-            }
-
-            button.disabled = true;
-            button.innerHTML = 'Envoi en cours <span class="spinner"></span>';
-
-            const userName = form.user_name.value;
-            const userEmail = form.user_email.value;
-
-            const mainEmail = emailjs.sendForm("service_usbdf8s", "template_cjdm6e9", form);
-            const autoReply = emailjs.send("service_gcmkzi4", "template_usereply", {
-              user_name: userName,
-              user_email: userEmail
-            });
-
-            Promise.all([mainEmail, autoReply])
-              .then(() => {
-                alert("✅ Message envoyé avec succès !");
-                form.reset();
-              })
-              .catch((err) => {
-                console.error("Erreur lors de l'envoi :", err);
-                alert("❌ Une erreur est survenue. Veuillez réessayer plus tard.");
-              })
-              .finally(() => {
-                button.disabled = false;
-                button.textContent = "Envoyer";
-              });
-          });
-        </script>
-
-      <!-- COLONNE DROITE : CARTE + COORDONNÉES + NEWSLETTER -->
+        <!-- COLONNE DROITE : CARTE + COORDONNÉES -->
         <div class="contact-info">
           <h2>Nos coordonnées</h2>
           <p><strong>Adresse :</strong><br>13 Am Sellerlach, 8525 Calmus Saeul, Luxembourg</p>
@@ -224,59 +141,37 @@
               allowfullscreen="" 
               loading="lazy"></iframe>
           </div>
-
- 
-	 <!-- fin NEWSLETTER code-->
-	 
-          </div>
         </div>
 
       </div>
     </section>
   </main>
 
-<!-- FOOTER -->
-<footer class="footer">
+  <!-- FOOTER -->
+  <footer class="footer">
     <div class="footer-wrapper">
 
-        <!-- Colonne Liens utiles -->
-        <div class="footer-col">
-            <h4>Liens utiles</h4>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="apropos.html">À propos</a></li>
-                <li><a href="prestations.html">Offres & Tarif</a></li>
-                <li><a href="contact.html">Contact</a></li>
-			  <li><a href="newslettre.html">News letter</a></li>
-            </ul>
-			
-	
-        </div>
+      <div class="footer-col">
+        <h4>Liens utiles</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="apropos.html">À propos</a></li>
+          <li><a href="prestations.html">Offres & Tarif</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="newslettre.html">News letter</a></li>
+        </ul>
+      </div>
 
-        <!-- Colonne À propos -->
-        <div class="footer-col">
-      	<h4>Mentions légales</h4>
-            <ul>
-                <li><a href="rgpd.html">Politique de protection vie privée</a></li>
-                <li><a href="charte.html">Charte des masseurs</a></li>
-				<li><a href="condition.html">Condition générale de vente</a></li>
-                </ul>
-     
-        </div>
+      <div class="footer-col">
+        <h4>Mentions légales</h4>
+        <ul>
+          <li><a href="rgpd.html">Politique de protection vie privée</a></li>
+          <li><a href="charte.html">Charte des masseurs</a></li>
+          <li><a href="condition.html">Condition générale de vente</a></li>
+        </ul>
+      </div>
 
-        <!-- Colonne Contact -->
-        <div class="footer-col">
-            <h4>Contactez-nous</h4>
-			  <ul>
-			  <li><a href="contact.html">Contact</a></li>
-			  <li><a href="newslettre.html">News letter</a></li>
-			  </ul>
-        </div>
-
-    </div>
-
-    <p class="footer-bottom">&copy; 2025 Viharis — Tous droits réservés - V1.1</p>
-</footer>
-
-</body>
-</html>
+      <div class="footer-col">
+        <h4>Contactez-nous</h4>
+        <ul>
+          <li><a href="contact.html">Contact</a></li>
