@@ -7,16 +7,31 @@
   <title>Viharis - Bien-être et détente</title>
   <meta name="description" content="Viharis : Bien-être et détente. Découvrez nos massages, méditations et formations pour revitaliser votre corps et votre esprit.">
 
+  <!-- 🔒 Sécurité front-end -->
+  <meta http-equiv="Content-Security-Policy"
+        content="
+          default-src 'self';
+          script-src 'self' https://cdn.jsdelivr.net;
+          style-src 'self' https://fonts.googleapis.com;
+          font-src 'self' https://fonts.gstatic.com;
+          img-src 'self' data: https:;
+          connect-src 'self' https://api.emailjs.com;
+          frame-src https://www.google.com/maps;
+          frame-ancestors 'self';
+        ">
+  <meta http-equiv="Strict-Transport-Security"
+        content="max-age=63072000; includeSubDomains; preload">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="contact.css">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 
-  <style>
-    /* Applique l'italique sur le texte dans le champ "Votre message" */
-    textarea#message {
-      font-style: italic;
-    }
-  </style>
+  <!-- Optionnel : SRI pour EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
+          integrity="sha384-..." crossorigin="anonymous"></script>
 </head>
 
 <body>
