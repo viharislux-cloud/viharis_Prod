@@ -1,167 +1,173 @@
-/* ================================================== */
-/* CONTACT PAGE STYLES - Compatible with style.css  */
-/* ================================================== */
+	/* ================================================== */
+	/* CONTACT PAGE - CSS UNIFIÉ */
+	/* ================================================== */
 
-/* --- CONTENEUR PRINCIPAL --- */
-.contact-wrapper {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-  padding: 40px 20px;
-  background-color: var(--light-bg);
-}
+	/* --- VARIABLES DE COULEUR (à définir dans :root) --- */
 
-/* --- FORMULAIRE --- */
-.contact-form {
-  flex: 1 1 400px;
-  background-color: var(--bg-color);
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px var(--shadow-color);
-  font-family: 'Open Sans', sans-serif;
-}
 
-.contact-form h2 {
-  color: var(--primary-green);
-  margin-bottom: 20px;
-  font-family: 'Poppins', sans-serif;
-}
+	/* --- CONTENEUR PRINCIPAL --- */
+	.contact-wrapper {
+	  display: flex;
+	  gap: 40px;
+	  flex-wrap: wrap;
+	  padding: 40px 20px;
+	  background-color: var(--light-bg);
+	  font-family: 'Open Sans', sans-serif;
+	}
 
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px 15px;
-  margin-bottom: 15px;
-  border: 1px solid var(--shadow-color);
-  border-radius: 5px;
-  font-size: 1em;
-  color: var(--text-color);
-  background-color: var(--bg-color);
-}
+	/* --- FORMULAIRE ET INFO CONTACT --- */
+	.contact-form,
+	.contact-info {
+	  flex: 1 1 400px;
+	  background-color: var(--bg-color);
+	  padding: 30px;
+	  border-radius: 10px;
+	  box-shadow: 0 4px 10px var(--shadow-color);
+	}
 
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-  border-color: var(--primary-green);
-  outline: none;
-}
+	/* --- TITRES --- */
+	.contact-form h2,
+	.contact-info h2 {
+	  color: var(--primary-green);
+	  margin-bottom: 20px;
+	  font-family: 'Poppins', sans-serif;
+	}
 
-.contact-form .phone-field {
-  display: flex;
-  gap: 10px;
-}
+	/* --- CHAMPS FORMULAIRES (TEXT, EMAIL, TEL, SELECT, TEXTAREA) --- */
+	.contact-form input[type="text"],
+	.contact-form input[type="email"],
+	.contact-form input[type="tel"],
+	.contact-form select,
+	.contact-form textarea,
+	.newsletter-in-col .ml-block-form input[type="email"] {
+	  width: 100%;
+	  padding: 12px 15px;
+	  margin-bottom: 15px;
+	  border: 1px solid var(--shadow-color);
+	  border-radius: 5px;
+	  font-size: 1em;
+	  color: var(--text-color);
+	  background-color: var(--bg-color);
+	  box-sizing: border-box;
+	  font-family: 'Open Sans', sans-serif;
+	  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+	}
 
-/* --- BOUTON --- */
-.contact-form button.btn {
-  background-color: var(--primary-green);
-  color: #fff;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1em;
-  transition: background 0.3s ease;
-}
+	.contact-form input:focus,
+	.contact-form select:focus,
+	.contact-form textarea:focus,
+	.newsletter-in-col .ml-block-form input[type="email"]:focus {
+	  border-color: var(--primary-green);
+	  outline: none;
+	  box-shadow: 0 0 6px var(--shadow-color);
+	}
 
-.contact-form button.btn:hover {
-  background-color: var(--primary-green-dark);
-}
+	/* --- TEXTAREA SPECIFIQUE --- */
+	textarea#message {
+	  font-style: italic;
+	}
 
-/* --- CHECKBOX NEWSLETTER SUR UNE LIGNE --- */
-label.newsletter {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-  font-size: 0.95em;
-  color: var(--text-color);
-}
+	/* --- BOUTONS --- */
+	.contact-form button.btn,
+	.newsletter-in-col .ml-block-form button.btn {
+	  background-color: var(--primary-green);
+	  color: #fff;
+	  padding: 12px 25px;
+	  border: none;
+	  border-radius: 5px;
+	  cursor: pointer;
+	  font-size: 1em;
+	  font-family: 'Poppins', sans-serif;
+	  transition: background 0.3s ease, transform 0.12s ease;
+	}
 
-label.newsletter input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  accent-color: var(--primary-green);
-  cursor: pointer;
-}
+	.contact-form button.btn:hover,
+	.newsletter-in-col .ml-block-form button.btn:hover {
+	  background-color: var(--primary-green-dark);
+	}
 
-/* --- INFORMATIONS DE CONTACT --- */
-.contact-info {
-  flex: 1 1 400px;
-  background-color: var(--bg-color);
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px var(--shadow-color);
-  font-family: 'Open Sans', sans-serif;
-}
+	/* --- CHAMP HONEYPOT (invisible) --- */
+	.honeypot {
+	  position: absolute;
+	  left: -9999px;
+	  top: -9999px;
+	  height: 0;
+	  width: 0;
+	  overflow: hidden;
+	  visibility: hidden;
+	}
 
-.contact-info h2 {
-  color: var(--primary-green);
-  margin-bottom: 15px;
-  font-family: 'Poppins', sans-serif;
-}
+	/* --- PHONE FIELD --- */
+	.contact-form .phone-field {
+	  display: flex;
+	  gap: 10px;
+	}
 
-.contact-info p,
-.contact-info a.link {
-  font-size: 0.95em;
-  color: var(--text-color);
-  text-decoration: none;
-}
+	/* --- CONTACT INFO --- */
+	.contact-info p,
+	.contact-info a.link {
+	  font-size: 0.95em;
+	  color: var(--text-color);
+	  text-decoration: none;
+	}
 
-.contact-info a.link:hover {
-  color: var(--primary-green-dark);
-}
+	.contact-info a.link:hover {
+	  color: var(--primary-green-dark);
+	}
 
-/* --- MAP --- */
-.map-container {
-  margin-top: 15px;
-  border-radius: 10px;
-  overflow: hidden;
-}
+	/* --- MAP --- */
+	.map-container {
+	  margin-top: 15px;
+	  border-radius: 10px;
+	  overflow: hidden;
+	}
 
-.map-container iframe {
-  width: 100%;
-  height: 250px;
-  border: 0;
-}
+	.map-container iframe {
+	  width: 100%;
+	  height: 250px;
+	  border: 0;
+	}
 
-/* --- RESPONSIVE --- */
-@media (max-width: 900px) {
-  .contact-wrapper {
-    flex-direction: column;
-  }
-}
-/* Champ honeypot invisible */
-.honeypot {
-  position: absolute;   /* Hors flux normal */
-  left: -9999px;        /* Hors écran */
-  top: -9999px;
-  height: 0;
-  width: 0;
-  overflow: hidden;
-  visibility: hidden;
-  
-/* --- ALIGNE LA CASE A COCHER ET LE TEXTE SUR LA MEME LIGNE --- */
-.checkbox-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+	/* --- NEWSLETTER --- */
+	.newsletter-in-col {
+	  margin-top: 20px;
+	}
 
-.newsletter input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  accent-color: var(--primary-green);
-  cursor: pointer;
-  margin-right: 10px; /* Espacement entre la case et le texte */
-  vertical-align: middle;
-}
+	.newsletter-in-col .ml-block-form {
+	  display: flex;
+	  flex-wrap: wrap;
+	  gap: 10px;
+	}
 
-.newsletter p {
-  margin: 0; /* Élimine la marge par défaut */
-  font-size: 0.95em;
-  color: var(--text-color);
-}
-textarea#message {
-  font-style: italic;
-}
+	.newsletter-in-col .ml-block-form input[type="email"] {
+	  flex: 1 1 300px;
+	}
+
+	.newsletter-in-col .ml-block-form button.btn {
+	  flex: 0 0 auto;
+	}
+
+	/* --- CHECKBOX (si utilisée) --- */
+	label.newsletter {
+	  display: flex;
+	  align-items: center;
+	  gap: 10px;
+	  margin-bottom: 20px;
+	  font-size: 0.95em;
+	  color: var(--text-color);
+	}
+
+	label.newsletter input[type="checkbox"] {
+	  width: 18px;
+	  height: 18px;
+	  accent-color: var(--primary-green);
+	  cursor: pointer;
+	  vertical-align: middle;
+	}
+
+	/* --- RESPONSIVE --- */
+	@media (max-width: 900px) {
+	  .contact-wrapper {
+		flex-direction: column;
+	  }
+	}
