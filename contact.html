@@ -6,23 +6,6 @@
   <title>Viharis - Bien-être et détente</title>
   <meta name="description" content="Viharis : Bien-être et détente. Découvrez nos massages, méditations et formations pour revitaliser votre corps et votre esprit.">
 
-  <!-- 🔒 Sécurité front-end -->
-  <meta http-equiv="Content-Security-Policy"
-        content="
-          default-src 'none';
-          script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline' https://maps.googleapis.com;
-          style-src 'self' https://fonts.googleapis.com https://maps.googleapis.com;
-          font-src 'self' https://fonts.gstatic.com;
-          img-src 'self' data: https:;
-          connect-src 'self' https://api.emailjs.com;
-          frame-src https://www.google.com https://maps.google.com https://www.google.com/maps;
-          frame-ancestors 'self';
-        ">
-  <meta http-equiv="Strict-Transport-Security"
-        content="max-age=63072000; includeSubDomains; preload">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="contact.css">
@@ -33,6 +16,7 @@
 </head>
 
 <body>
+
   <!-- HEADER -->
   <header class="header">
     <div class="logo">
@@ -105,7 +89,7 @@
 
             <textarea id="message" name="message" rows="6" placeholder="Votre message" required></textarea>
 
-            <!-- CAPTCHA basé sur une somme -->
+            <!-- CAPTCHA -->
             <label id="captcha-label" for="captcha">Entrez le résultat de : <strong>0 + 0</strong></label>
             <input type="text" id="captcha" name="captcha" placeholder="Réponse" required>
 
@@ -118,7 +102,7 @@
           </form>
 
           <p style="font-size: 0.9em; color: #555;">
-            Les informations saisies dans ce formulaire (Prénom, Email, Message) sont utilisées uniquement pour répondre à votre demande. 
+            Les informations saisies dans ce formulaire sont utilisées uniquement pour répondre à votre demande. 
             Elles sont conservées pendant 24 mois et ne sont pas partagées avec des tiers. 
             Vous pouvez exercer vos droits d'accès, de rectification ou de suppression en écrivant à 
             <a href="mailto:viharislux@gmail.com">viharislux@gmail.com</a>.
@@ -175,3 +159,65 @@
         <h4>Contactez-nous</h4>
         <ul>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="newslettre.html">News letter</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <p class="footer-bottom">&copy; 2025 Viharis — Tous droits réservés - V1.1</p>
+  </footer>
+
+  <!-- SCRIPT EMAILJS -->
+  <script>
+    emailjs.init("5GEa8ZEJk5XnQsw3i");
+    const form = document.getElementById("contact-form");
+    const button = form.querySelector("button");
+
+    const generateCaptcha = () => {
+      const num1 = Math.floor(Math.random() * 10);
+      const num2 = Math.floor(Math.random() * 10);
+      const result = num1 + num2;
+      document.getElementById("captcha-label").innerHTML = `Entrez le résultat de : <strong>${num1} + ${num2}</strong>`;
+      return result;
+    };
+
+    let captchaAnswer = generateCaptcha();
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const honeypot = form.querySelector("[name='website']");
+      if (honeypot.value) return;
+
+      const userCaptcha = parseInt(form.captcha.value);
+      if (userCaptcha !== captchaAnswer) {
+        alert("❌ Mauvaise réponse au captcha !");
+        return;
+      }
+
+      button.disabled = true;
+      button.innerHTML = 'Envoi en cours...';
+
+      const userName = form.user_name.value;
+      const userEmail = form.user_email.value;
+
+      emailjs.sendForm("service_usbdf8s", "template_cjdm6e9", form)
+        .then(() => emailjs.send("service_gcmkzi4", "template_usereply", {user_name: userName, user_email: userEmail}))
+        .then(() => {
+          alert("✅ Message envoyé avec succès !");
+          form.reset();
+          captchaAnswer = generateCaptcha();
+        })
+        .catch(err => {
+          console.error("Erreur lors de l'envoi :", err);
+          alert("❌ Une erreur est survenue. Veuillez réessayer plus tard.");
+        })
+        .finally(() => {
+          button.disabled = false;
+          button.textContent = "Envoyer";
+        });
+    });
+  </script>
+
+</body>
+</html>
