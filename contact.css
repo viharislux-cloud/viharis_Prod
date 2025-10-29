@@ -171,3 +171,8 @@
 		flex-direction: column;
 	  }
 	}
+.checkbox-line {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* espace entre la checkbox et le texte */
+}
