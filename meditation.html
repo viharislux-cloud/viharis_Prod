@@ -7,7 +7,7 @@
     <meta name="description" content="Viharis : Bien-être et détente. Découvrez nos massages, méditations et formations pour revitaliser votre corps et votre esprit.">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="acceuil.css">
+    <link rel="stylesheet" href="section.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -52,12 +52,17 @@
     </section>
 
     <!-- SECTION SPÉCIALE -->
-    <section class="special-section">
-      <div class="rendezvous-container">
+	<div class="services-row">
+	
+    <section class="special-section" id="meditation">
+	
+	   <h2>Réservez votre moment de méditation</h2>
+	   <div class="container">
+ <div class="photo">
+            <img src="images/massage5.webp" alt="Méditation bien-être" loading="lazy">
+          </div>
+        <div class="comment">
         
-        <!-- Colonne gauche : texte + image -->
-        <div class="rendezvous-text">
-          <h2>Réservez votre moment de méditation</h2>
           <p>
             Offrez-vous un instant de sérénité. Choisissez le créneau horaire qui vous convient 
             pour une séance de méditation guidée, dans un environnement apaisant et harmonieux.
@@ -67,12 +72,14 @@
             et renforcer votre bien-être global. Chaque rendez-vous est une bulle de calme, 
             centrée sur vous.
           </p>
-          <div class="image-calendrier">
-            <img src="images/massage5.webp" alt="Méditation bien-être" loading="lazy">
-          </div>
-        </div>
-
-        <!-- Colonne droite : calendrier -->
+		  </div>
+		  </div>
+</section>	  
+<section class="special-section" id="calendrier">
+		  <h2>Via notre calendrier</h2>  
+		  <div class="container">
+         
+       
         <div class="rendezvous-calendrier">
           <div class="calendly-inline-widget" 
                data-url="https://calendly.com/viharislux/meditation">
@@ -82,6 +89,8 @@
 
       </div>
     </section>
+	</div>
+	
 </main>
 <!-- FOOTER -->
 <footer class="footer">
@@ -92,9 +101,10 @@
             <h4>Liens utiles</h4>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="apropos.html">À propos</a></li>
-                <li><a href="prestations.html">Offres & Tarif</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="prestations.html">Offres</a></li>
+				<li><a href="tarif.html">Nos tarif</a></li>
+				<li><a href="apropos.html">A propos de nous</a></li>
+
             </ul>
 			
 	
@@ -116,12 +126,13 @@
             <h4>Contactez-nous</h4>
 			  <ul>
 			  <li><a href="contact.html">Contact</a></li>
+			  <li><a href="newslettre.html">News letter</a></li>
 			  </ul>
         </div>
 
     </div>
 
-    <p class="footer-bottom">&copy; 2025 Viharis — Tous droits réservés - V1.1</p>
+    <p class="footer-bottom">&copy; 2025 Viharis — Tous droits réservés - V 1.2</p>
 </footer>
 <script>
 const header = document.querySelector('.header');
