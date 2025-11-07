@@ -7,66 +7,42 @@
 <meta name="description" content="Inscrivez-vous à la newsletter Viharis pour recevoir nos offres, conseils et nouveautés bien-être.">
 
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="section.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 <style>
-    :root {
-        --primary-green: #2a9d8f;
-        --primary-green-dark: #21867c;
-        --light-bg: #fafafa;
-        --text-color: #333;
-    }
 
-    body {
-        font-family: 'Open Sans', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #fff;
-        color: var(--text-color);
-    }
 
-    a { text-decoration: none; color: var(--primary-green); }
+ 
 
-    .btn {
-        font-weight: 600;
-        border-radius: 5px;
-        cursor: pointer;
-        border: none;
-        background-color: var(--primary-green);
-        color: #fff;
-        padding: 12px 25px;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    .btn:hover { background-color: var(--primary-green-dark); transform: scale(1.02); }
-
-    /* --- Header --- */
-    .header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #fff; border-bottom: 1px solid #ddd; position: sticky; top:0; z-index:1000; transition: box-shadow 0.3s; flex-wrap: wrap; gap:10px; }
-    .header.scrolled { box-shadow: 0 5px 15px rgba(0,0,0,0.15); }
-    .header .nav a { margin-left: 20px; font-weight: 600; padding:8px 15px; border-radius:5px; }
-    .header .nav a:hover, .header .nav a.active { background-color: var(--primary-green); color:#fff; }
-
-    /* --- Newsletter Section --- */
-    .newsletter-section { background-color: var(--light-bg); padding: 80px 20px; text-align: center; }
-    .newsletter-section h2 { font-size: 2rem; color: var(--primary-green-dark); margin-bottom: 20px; font-weight: 700; }
-    .newsletter-section p { font-size: 1.1rem; margin-bottom: 40px; line-height: 1.6; }
-    .newsletter-form-wrapper { max-width: 500px; margin: 0 auto; }
-
-    .ml-form-formContent input.form-control {
+.ml-form-formContent input.form-control {
         width: 100%; padding: 12px 15px; font-size: 1rem; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 15px;
     }
 
-    .ml-form-embedSubmit .btn {
-        width: 100%; font-size: 1rem; padding: 12px 0; border-radius: 5px; font-weight:600;
+.ml-form-successBody {
+        background-color: #fff ;color: #fff; border-radius: 5px; margin-top: 15px; display:none;
     }
 
-    .ml-form-successBody {
-        background-color: var(--primary-green); color: #fff; padding: 15px; border-radius: 5px; margin-top: 15px; display:none;
-    }
-
-    @media (max-width:768px){
-        .newsletter-section h2 { font-size: 1.8rem; }
-        .newsletter-section p { font-size: 1rem; }
-    }
+.ml-form-successBody row-success.comment {
+		max-width: 650px;
+	  color: var(--primary-green);
+	}
+.ml-form-successBody row-success.comment p {
+	  line-height: 1.7;
+	  text-align: center;
+	}
+	
+.ml-form-successBody row-success .comment h3 {
+	  color: var(--primary-green);
+	  margin-top: 0;
+	  margin-bottom: 0.5rem;
+	  font-size: 1.6rem;
+	}
+	
+.ml-form-successBody row-success .comment a {
+	  color: var(--primary-green);
+	  text-decoration: none;
+	}
 </style>
 </head>
 <body>
@@ -75,25 +51,45 @@
 <header class="header">
     <div class="logo"><a href="index.html"><img src="images/Vahiris.png" alt="Logo Viharis" style="height:80px;"></a></div>
     <nav class="nav">
-        <a href="index.html" class="btn-menu">Accueil</a>
-        <a href="prestations.html" class="btn-menu">Offres & Tarif</a>
-        <a href="apropos.html" class="btn-menu">À propos</a>
-        <a href="contact.html" class="btn-menu">Contact</a>
+        <a href="index.html" class="btn">Accueil</a>
+       <!-- <a href="prestations.html" class="btn">Offres & Tarif</a>
+        <a href="apropos.html" class="btn">À propos</a>
+        <a href="contact.html" class="btn">Contact</a>-->
     </nav>
 </header>
 
-<!-- MAIN -->
+<!-- MAIN --> 
+
+ <!-- HERO -->
+  <section class="hero" id="main-content">
+    <div class="hero-image">
+      <img src="images/massage4.webp" alt="Massage relaxant" loading="lazy">
+      <div class="hero-text">
+        <h1>Newsletter</h1>
+        <p></p>
+        <a href="#main-content" class="btn">Découvrir</a>
+      </div>
+    </div>
+  </section>
 <main id="main-content">
-<section class="newsletter-section">
+<section class="welcome-section">
+            <div class="container">
+
     <h2>Inscrivez-vous à notre newsletter</h2>
     <p>Recevez nos conseils bien-être, offres exclusives et toutes nos nouveautés directement dans votre boîte mail.</p>
+	</div>
+</section>
 
-    <div class="newsletter-form-wrapper">
+
+
+<!-- section newsletter -->
+<section class="special-section">
+<div class="container">
+      <div class="comment">
+
         <!-- Formulaire MailerLite -->
         <div id="mlb2-32676945" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-32676945">
-            <div class="ml-form-align-center">
-                <div class="ml-form-embedWrapper embedForm">
-                    <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                     <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
                         <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1885164/forms/169606461550233453/subscribe" method="post">
                             <div class="ml-form-formContent">
                                 <div class="ml-form-fieldRow ml-last-item">
@@ -110,16 +106,18 @@
                         </form>
                     </div>
                     <div class="ml-form-successBody row-success">
-                        <div class="ml-form-successContent">
-                            <h4>Merci !</h4>
+                        <div class="comment">
+                            <h3>Merci !</h3>
                             <p>Vous avez rejoint notre liste de diffusion avec succès.</p>
+				
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- /Formulaire -->
+            
+       
+       </div>
     </div>
+	
 </section>
 </main>
 
@@ -133,9 +131,9 @@
             <h4>Liens utiles</h4>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="prestations.html">Offres</a></li>
+           <!--     <li><a href="prestations.html">Offres</a></li>
 				<li><a href="tarif.html">Nos tarif</a></li>
-				<li><a href="apropos.html">A propos de nous</a></li>
+				<li><a href="apropos.ml">A propos de nous</a></li>-->
 
             </ul>
 			
@@ -148,7 +146,7 @@
             <ul>
                 <li><a href="rgpd.html">Politique de protection vie privée</a></li>
                 <li><a href="charte.html">Charte des masseurs</a></li>
-				<li><a href="condition.html">Condition générale de vente</a></li>
+			<!--	<li><a href="condition.html">Condition générale de vente</a></li>-->
                 </ul>
      
         </div>
@@ -164,7 +162,7 @@
 
     </div>
 
-    <p class="footer-bottom">&copy; 2025 Viharis — Tous droits réservés - V 1.2</p>
+    <p class="footer-bottom">&copy; 2025 Viharis — Tous droits réservés - V 1.2 - Crédit photo: <a href="https://www.pexels.com/">Photo</a></p>
 </footer>
 
 <!-- Scripts -->
