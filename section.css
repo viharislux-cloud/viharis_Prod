@@ -4,12 +4,11 @@
 	  --primary-green-dark: #21867c;
 	  --text-color: #333;
 	  --bg-color: #fff;
-	  /*--bg-color-Section:#fff;*/
+	  --bg-color-Section:#fff;
 	  --light-bg: #fafafa;
 	  --shadow-color: rgba(0,0,0,0.1);
 	  --shadow-hover: rgba(0,0,0,0.15);
 	}
-
 /*----------------------------------------------------------------------------------------------*/
 /*Format des Colonne*/	
 /*----------------------------------------------------------------------------------------------*/
@@ -154,6 +153,4 @@
   .services-section .service-card {
     max-width: 90%;
   }
-
 }
-

@@ -41,7 +41,7 @@ a:focus {
 /* --- BOUTONS --- */
 .btn {
   font-weight: 600;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
   border: none;
@@ -73,20 +73,7 @@ a:focus {
   display: block;
 }
 
-.header .nav a {
-  margin-left: 20px;
-  font-weight: 600;
-  color: var(--primary-green);
-  padding: 8px 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
 
-.header .nav a:hover,
-.header .nav a.active {
-  background-color: var(--primary-green);
-  color: #fff;
-}
 /* Header sticky et ombre */
 .header {
   position: sticky;  /* reste en haut */
@@ -192,7 +179,7 @@ a:focus {
   background-color: var(--primary-green);
   color: #fff;
   padding: 12px 30px;
-  border-radius: 8px;
+  border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
   transition: transform 0.3s, box-shadow 0.3s;
