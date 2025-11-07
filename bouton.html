@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pack de Boutons Modernes</title>
+<style>
+  /* Styles généraux de la page */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    padding: 40px;
+  }
+
+  .button-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  /* Styles généraux des boutons */
+  .btn {
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin: 5px;
+  }
+
+  /* 1. Classique vert */
+  .btn1 { background-color: #4CAF50; color: white; }
+  .btn1:hover { background-color: #45a049; }
+
+  /* 2. Glow bleu */
+  .btn2 { background-color: #1E90FF; color: white; box-shadow: 0 0 5px #1E90FF; }
+  .btn2:hover { box-shadow: 0 0 20px #1E90FF; }
+
+  /* 3. Bordure animée */
+  .btn3 { background: none; color: #FF4500; border: 2px solid #FF4500; }
+  .btn3::before { content: ''; position: absolute; width: 0; height: 100%; top: 0; left: 0; background: #FF4500; z-index: 0; transition: 0.4s; }
+  .btn3:hover::before { width: 100%; }
+  .btn3:hover { color: white; }
+
+  /* 4. Ombre et mouvement */
+  .btn4 { background-color: #FF69B4; color: white; box-shadow: 0 5px #C71585; }
+  .btn4:hover { transform: translateY(-3px); box-shadow: 0 8px #C71585; }
+
+  /* 5. Bouton rond */
+  .btn5 { background-color: #FFA500; color: white; border-radius: 50px; }
+  .btn5:hover { background-color: #FF8C00; }
+
+  /* 6. Gradient animé */
+  .btn6 { background: linear-gradient(45deg, #6a11cb, #2575fc); color: white; }
+  .btn6:hover { background: linear-gradient(45deg, #2575fc, #6a11cb); }
+
+  /* 7. Scale */
+  .btn7 { background-color: #FF6347; color: white; }
+  .btn7:hover { transform: scale(1.1); }
+
+  /* 8. Outline */
+  .btn8 { background: transparent; border: 2px solid #20B2AA; color: #20B2AA; }
+  .btn8:hover { background-color: #20B2AA; color: white; }
+
+  /* 9. Neon */
+  .btn9 { color: #0ff; background-color: #111; text-shadow: 0 0 5px #0ff,0 0 10px #0ff; }
+  .btn9:hover { text-shadow: 0 0 10px #0ff,0 0 20px #0ff; }
+
+  /* 10. Ripple */
+  .btn10 { background-color: #FF5722; color: white; }
+  .btn10:after { content: ""; display: block; position: absolute; width: 100px; height: 100px; top: 50%; left: 50%; pointer-events: none; background: rgba(255,255,255,0.5); border-radius: 50%; transform: scale(0) translate(-50%, -50%); transition: transform 0.5s, opacity 1s; }
+  .btn10:active:after { transform: scale(4) translate(-50%, -50%); opacity: 0; transition: 0s; }
+
+  /* 11. 3D */
+  .btn11 { background-color: #4CAF50; color: white; box-shadow: 0 5px #2e7d32; }
+  .btn11:hover { transform: translateY(-3px); box-shadow: 0 8px #2e7d32; }
+
+  /* 12. Outline violet */
+  .btn12 { background: transparent; border: 2px solid #673AB7; color: #673AB7; }
+  .btn12:hover { background: #673AB7; color: white; }
+
+  /* 13. Gradient chaud */
+  .btn13 { background: linear-gradient(90deg, #FF6B6B, #FFD93D); color: white; }
+  .btn13:hover { background: linear-gradient(90deg, #FFD93D, #FF6B6B); }
+
+  /* 14. Shadow pop */
+  .btn14 { background-color: #03A9F4; color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+  .btn14:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.5); transform: translateY(-2px); }
+
+  /* 15. Glass */
+  .btn15 { background: rgba(255,255,255,0.2); color: #fff; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); }
+  .btn15:hover { background: rgba(255,255,255,0.3); }
+
+  /* 16. Icon */
+  .btn16 { background-color: #FF4081; color: white; padding-left: 40px; }
+  .btn16::before { content: '★'; position: absolute; left: 12px; font-size: 16px; }
+  .btn16:hover { background-color: #E91E63; }
+
+  /* 17. Slide */
+  .btn17 { background-color: #00BCD4; color: white; }
+  .btn17::after { content: ''; position: absolute; width: 0; height: 100%; top: 0; left: 0; background: rgba(255,255,255,0.2); transition: width 0.3s; }
+  .btn17:hover::after { width: 100%; }
+
+  /* 18. Bounce */
+  .btn18 { background-color: #FFC107; color: white; }
+  .btn18:hover { animation: bounce 0.4s; }
+  @keyframes bounce { 0% { transform: translateY(0); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0); } }
+
+  /* 19. Fade */
+  .btn19 { background-color: #8BC34A; color: white; }
+  .btn19:hover { color: #000; background-color: #CDDC39; transition: all 0.5s; }
+
+  /* 20. Rotate */
+  .btn20 { background-color: #9C27B0; color: white; }
+  .btn20:hover { transform: rotate(15deg); }
+</style>
+</head>
+<body>
+  <div class="button-gallery">
+    <button class="btn btn1">Bouton 1</button>
+    <button class="btn btn2">Bouton 2</button>
+    <button class="btn btn3">Bouton 3</button>
+    <button class="btn btn4">Bouton 4</button>
+    <button class="btn btn5">Bouton 5</button>
+    <button class="btn btn6">Bouton 6</button>
+    <button class="btn btn7">Bouton 7</button>
+    <button class="btn btn8">Bouton 8</button>
+    <button class="btn btn9">Bouton 9</button>
+    <button class="btn btn10">Bouton 10</button>
+    <button class="btn btn11">Bouton 11</button>
+    <button class="btn btn12">Bouton 12</button>
+    <button class="btn btn13">Bouton 13</button>
+    <button class="btn btn14">Bouton 14</button>
+    <button class="btn btn15">Bouton 15</button>
+    <button class="btn btn16">Bouton 16</button>
+    <button class="btn btn17">Bouton 17</button>
+    <button class="btn btn18">Bouton 18</button>
+    <button class="btn btn19">Bouton 19</button>
+    <button class="btn btn20">Bouton 20</button>
+  </div>
+</body>
+</html>
