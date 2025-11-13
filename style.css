@@ -225,8 +225,8 @@ a:focus {
 
 /* --- FOOTER --- */
 .footer {
-  background-color: var(--primary-green-dark);
-  color: #000;
+  background-color: #000;
+  color: #fff;
   padding: 40px 20px;
   text-align: center;
   margin-top: 60px;
@@ -248,7 +248,7 @@ a:focus {
   flex-direction: column;
 }
 
-.footer-col h4 {
+.footer-col h3 {
   font-size: 1.2rem;
   margin-bottom: 15px;
   color: #fff;
@@ -321,4 +321,5 @@ a:focus {
   .header .nav { display: flex; flex-wrap: wrap; justify-content: center; }
   .header .nav a { margin: 5px; }
 }
+
 
