@@ -1,7 +1,3 @@
-body {
-    font-family: 'Poppins', 'Open Sans', Arial, sans-serif;
-}
-
 
 /* --- VARIABLES ET COULEURS --- */
 :root {
@@ -20,7 +16,7 @@ body {
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', 'Open Sans', Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -326,4 +322,5 @@ a:focus {
   .header .nav { display: flex; flex-wrap: wrap; justify-content: center; }
   .header .nav a { margin: 5px; }
 }
+
 
