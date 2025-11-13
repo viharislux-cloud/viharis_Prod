@@ -1,3 +1,8 @@
+body {
+    font-family: 'Poppins', 'Open Sans', Arial, sans-serif;
+}
+
+
 /* --- VARIABLES ET COULEURS --- */
 :root {
   --primary-green: #2a9d8f;
@@ -321,3 +326,4 @@ a:focus {
   .header .nav { display: flex; flex-wrap: wrap; justify-content: center; }
   .header .nav a { margin: 5px; }
 }
+
