@@ -278,14 +278,14 @@ a:focus {
 /* Liens du footer */
 .footer-col ul li a,
 .footer a {
-  color: #ccc;
+  color: #fff;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-col ul li a:hover,
 .footer a:hover {
-  color: #ff6f61;
+  color: #FFD700;
 }
 
 .footer-bottom {
