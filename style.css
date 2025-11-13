@@ -226,7 +226,7 @@ a:focus {
 /* --- FOOTER --- */
 .footer {
   background-color: var(--primary-green-dark);
-  color: #fff;
+  color: #000;
   padding: 40px 20px;
   text-align: center;
   margin-top: 60px;
@@ -321,3 +321,4 @@ a:focus {
   .header .nav { display: flex; flex-wrap: wrap; justify-content: center; }
   .header .nav a { margin: 5px; }
 }
+
