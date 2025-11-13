@@ -1,0 +1,30 @@
+name: Notify IndexNow
+
+on:
+  push:
+    branches:
+      - main   # ou 'master' selon ton dépôt
+  workflow_dispatch:  # permet de le lancer manuellement si tu veux
+
+jobs:
+  notify-indexnow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Submit URLs to IndexNow
+        run: |
+          echo "Submitting URLs to IndexNow..."
+          curl -X POST "https://api.indexnow.org/IndexNow" \
+          -H "Content-Type: application/json; charset=utf-8" \
+          -d '{
+            "host": "viharis.lu",
+            "key": "c7f0b1045334497085961363964a3161",
+            "keyLocation": "https://viharis.lu/c7f0b1045334497085961363964a3161.txt",
+            "urlList": [
+                "https://viharis.lu/",
+          
+            ]
+          }'
