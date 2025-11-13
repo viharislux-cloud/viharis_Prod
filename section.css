@@ -1,4 +1,10 @@
-	/* --- Layout General --- */
+body {
+    font-family: 'Poppins', 'Open Sans', Arial, sans-serif;
+}
+
+
+
+/* --- Layout General --- */
 	:root {
 	  --primary-green: #2a9d8f;
 	  --primary-green-dark: #21867c;
@@ -153,4 +159,5 @@
   .services-section .service-card {
     max-width: 90%;
   }
+
 }
