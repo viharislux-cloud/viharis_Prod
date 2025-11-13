@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viharis - Massage Tantra Luxembourg</title>
+    <title>Viharis - Bien-être et détente</title>
     <meta name="description" content="Viharis : Bien-être et détente. Découvrez nos massages tantriques, massage 5 continents, méditations et formations pour revitaliser votre corps et votre esprit.">
 
     <!-- 🔒 Sécurité front-end pour GitHub Pages -->
     <meta http-equiv="Content-Security-Policy"
-          content="default-src 'self'; img-src 'self' https:; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; frame-ancestors 'self';">
-    <meta http-equiv="Strict-Transport-Security"
-          content="max-age=63072000; includeSubDomains; preload">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-	<link rel="canonical" href="https://www.viharis.lu/" />
+          content="default-src 'self'; img-src 'self' https:; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+
+    <!-- Préchargement des polices -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <!-- Fallback pour navigateurs sans JS -->
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    </noscript>
+
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="section.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -149,6 +154,7 @@
 
 </body>
 </html>
+
 
 
 
