@@ -317,7 +317,7 @@ a:focus {
 
 /* --- MEDIA QUERIES --- */
 @media (max-width: 750px) {
-  .welcome-section {scroll-margin-top: 100px; 
+  .welcome-section {scroll-margin-top: 150px; 
   .hero-text h1 { font-size: 1.5rem; }
 .hero-text {
     width: 100vw;
