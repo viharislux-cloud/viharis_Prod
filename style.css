@@ -338,7 +338,16 @@ hero-text p {
   .header .nav a { margin: 5px; }
 }
 
-
+.btn {
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: none;
+  background-color: #FFD700;
+  color: #fff;
+  padding: 12px 25px;
+}
 
 
 
