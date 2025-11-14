@@ -339,7 +339,7 @@ hero-text p {
 }
 
 .btn {
-  font-weight: 600;
+  font-weight: 300;
   border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
