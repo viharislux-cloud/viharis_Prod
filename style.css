@@ -58,7 +58,7 @@ a:focus {
 /* --- HEADER --- */
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* par défaut sur desktop */
   align-items: center;
   padding: 20px 40px;
   background-color: var(--bg-color);
@@ -72,7 +72,6 @@ a:focus {
   width: auto;
   display: block;
 }
-
 
 /* Header sticky et ombre */
 .header {
@@ -333,9 +332,14 @@ hero-text p {
     font-size: 1rem; /* tu peux augmenter la taille pour mobile */
   }
 
-  .header { flex-direction: column; gap: 10px; align-items: center; }
-  .header .nav { display: flex; flex-wrap: wrap; justify-content: center; }
-  .header .nav a { margin: 5px; }
+ .header {
+    justify-content: center; /* centre tous les éléments horizontalement */
+    padding: 20px;
+  }
+
+  .header .logo img {
+    height: 80px; /* réduire la taille du logo sur mobile */
+  }
 }
 
 .btn {
