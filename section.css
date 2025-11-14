@@ -92,7 +92,7 @@
 	  color: var(--primary-green-dark);
 	  margin-top: 0;
 	  margin-bottom: 0.5rem;
-	  font-size: 1.6rem;
+	  font-size: 1.0rem;
 	}
 
 	.special-section .comment p {
@@ -156,4 +156,5 @@
   }
 
 }
+
 
