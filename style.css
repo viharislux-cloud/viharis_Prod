@@ -210,7 +210,9 @@ a:focus {
   max-width: 900px;
   margin: 0 auto;
 }
-
+.welcome-section {
+  scroll-margin-top: 130px; /* hauteur du header */
+  
 .welcome-section h2 {
   font-size: 2rem;
   color: var(--primary-green-dark);
@@ -322,6 +324,7 @@ a:focus {
   .header .nav { display: flex; flex-wrap: wrap; justify-content: center; }
   .header .nav a { margin: 5px; }
 }
+
 
 
 
