@@ -1,325 +1,167 @@
-/* --- VARIABLES ET COULEURS --- */
-:root {
-  --primary-green: #2a9d8f;
-  --primary-green-dark: #21867c;
-  --text-color: #333;
-  --bg-color: #fff;
-  --light-bg: #fafafa;
-  --shadow-color: rgba(0,0,0,0.1);
-  --shadow-hover: rgba(0,0,0,0.15);
-}
-
-/* --- GLOBAL --- */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Open Sans', sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-
-h1, h2, h3, h4, h5 {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
-  color: var(--primary-green);
-}
-
-a:focus {
-  outline: 2px solid var(--primary-green-dark);
-  outline-offset: 2px;
-}
-
-/* --- BOUTONS --- */
-.btn {
-  font-weight: 600;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  border: none;
-  background-color: var(--primary-green);
-  color: #fff;
-  padding: 12px 25px;
-}
-
-.btn:hover, .btn:focus {
-  background-color: var(--primary-green-dark);
-  transform: scale(1.02);
-}
-
-/* --- HEADER --- */
-.header {
+	/* --- Layout General --- */
+	:root {
+	  --primary-green: #2a9d8f;
+	  --primary-green-dark: #21867c;
+	  --text-color: #333;
+	  --bg-color: #fff;
+	  --bg-color-Section:#fff;
+	  --light-bg: #fafafa;
+	  --shadow-color: rgba(0,0,0,0.1);
+	  --shadow-hover: rgba(0,0,0,0.15);
+	}
+/*----------------------------------------------------------------------------------------------*/
+/*Format des Colonne*/	
+/*----------------------------------------------------------------------------------------------*/
+.services-row {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background-color: var(--bg-color);
-  border-bottom: 1px solid #ddd;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-wrap: wrap;         /* permet aux sections de passer à la ligne si trop large */
+  gap: 20px;               /* espace entre les sections */
+  justify-content: center; /* centre les sections si elles ne remplissent pas toute la ligne */
+  max-width: 1000px;       /* limite la largeur totale de la ligne */
+  margin: 0 auto;          /* centre horizontalement dans la page */
+}
+/*----------------------------------------------------------------------------------------------*/
+/*Format des Colonne*/
+/*----------------------------------------------------------------------------------------------*/
+.special-section {
+  flex: 1 1 300px;         /* largeur minimale 300px, peut grandir */
+  max-width: calc((1000px - 2 * 20px) / 4); /* largeur max par section si tu veux exactement 3 sections par ligne */
+  box-sizing: border-box;
+/*----------------------------------------------------------------------------------------------*/
+}.special-section {
+	  background-color: var(--bg-color-Section); /*Fond*/
+	  padding: 3rem 1rem;
+	  border-radius: 16px; /*bon arrondi*/
+	  box-shadow: 0 4px 10px var(--shadow-color); /*Shaddow normal*/
+	  transition: box-shadow 0.3s ease; /*transition*/
+	  margin: 2rem auto;
+	  max-width: 1000px;
+	}
+
+	.special-section:hover {
+	  box-shadow: 0 6px 16px var(--shadow-hover); /*Shaddow survol*/
+	}
+
+	.special-section h2 {
+	  color: var(--primary-green-dark);
+	  text-align: center;
+	  margin-bottom: 2rem;
+	}
+	/*----------------------------------------------------------------------------------------------*/
+	/*Format des Container*/
+	/*----------------------------------------------------------------------------------------------*/
+	.special-section .container {
+	  display: flex;
+	  align-items: flex-start;
+	  justify-content: center;
+	  gap: 2rem;
+	  flex-wrap: wrap;
+	}
+	/*----------------------------------------------------------------------------------------------*/
+	/*Format des photos*/
+	/*----------------------------------------------------------------------------------------------*/
+
+	/* Image */
+	.special-section .container .photo  img {
+	width: 260px;
+	  height: auto;
+	  border-radius: 16px;
+	  object-fit: cover;
+	  box-shadow: 0 4px 8px var(--shadow-color);
+	  transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.services-section .container img {
+	  width: 100%;
+	  height: 200px;
+	  object-fit: cover;
+	}
+	
+	/* Image miniature */
+		.special-section .container .photoMiniature  img {
+
+  bottom: 20px;
+  right: 10px;
+  width: 120px; /* ajuste la taille selon ton design */
+  border-radius: 10px;
+  opacity: 0.9; /* optionnel */
 }
 
-.header .logo img {
-  height: 120px;
-  width: auto;
-  display: block;
+	
+/*----------------------------------------------------------------------------------------------*/
+/*Format des texte*/
+/*----------------------------------------------------------------------------------------------*/
+
+	/* Texte */
+	.special-section .comment {
+	  max-width: 650px;
+	  color: var(--text-color);
+	}
+
+	.special-section .comment h3 {
+	  color: var(--primary-green-dark);
+	  margin-top: 0;
+	  margin-bottom: 0.5rem;
+	  font-size: 1.0rem;
+	}
+
+	.special-section .comment p {
+	  line-height: 1.7;
+	  text-align: justify;
+	}
+
+	.special-section .comment a {
+	  color: var(--primary-green);
+	  text-decoration: none;
+	}
+
+	.special-section .comment a:hover {
+	  text-decoration: underline;
+	}
+/*----------------------------------------------------------------------------------------------*/
+/*Meditation - Calendrier*/
+/*----------------------------------------------------------------------------------------------*/
+
+.special-section .rendezvous-calendrier {
+  flex: 1 1 50%;
+  min-width: 350px;
+  display: flex; /* permet au widget de prendre toute la hauteur */
 }
 
-
-/* Header sticky et ombre */
-.header {
-  position: sticky;  /* reste en haut */
-  top: 0;
-  z-index: 1000;
-  transition: box-shadow 0.3s ease;
-}
-
-/* Ombre dynamique au scroll */
-.header.scrolled {
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-}
-/* --- HERO --- */
-.hero-image {
-  position: relative;
+.special-section .rendezvous-calendrier .calendly-inline-widget {
+  flex: 1; /* prend toute la hauteur du parent */
   width: 100%;
-  height: 60vh;
-  min-height: 250px;
+  min-height: 600px; /* hauteur du calendrier sur desktop */
+  border-radius: 12px;
   overflow: hidden;
 }
+/*----------------------------------------------------------------------------------------------*/
+	/* --- Pour la gestion des mobiles --- */
+/*----------------------------------------------------------------------------------------------*/
 
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(70%);
-  transition: transform 0.3s ease;
-}
-
-.hero-image img:hover {
-  transform: scale(1.05);
-}
-
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 700px;
-  text-align: center;
-  color: white;
-  padding: 0 20px;
-}
-
-.hero-text h1 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.hero-text p {
-  font-size: 1.1rem;
-  font-weight: 300;
-  color: #f5f5f5;
-}
-/* --- HERO ANIMÉ --- */
-.hero-image {
-  position: relative;
-  width: 100%;
-  height: 60vh; /* ajuste la hauteur du Hero */
-  min-height: 300px;
-  overflow: hidden;
-}
-
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(70%);
-  transition: transform 0.5s ease;
-}
-
-.hero-image img:hover {
-  transform: scale(1.05);
-}
-
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 700px;
-  text-align: center;
-  color: #fff;
-  padding: 0 20px;
-}
-
-.hero-text h1,
-.hero-text p,
-.hero-text .btn {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeSlide 1s forwards;
-}
-
-.hero-text h1 { animation-delay: 0.3s; font-size: 2.2rem; }
-.hero-text p { animation-delay: 0.6s; font-size: 1.1rem; }
-.hero-text .btn { animation-delay: 0.9s; }
-
-/* Bouton CTA */
-.hero-text .btn {
-  display: inline-block;
-  background-color: var(--primary-green);
-  color: #fff;
-  padding: 12px 30px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.hero-text .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-}
-
-/* Animation clé */
-@keyframes fadeSlide {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+@media (max-width: 992px) {
+  .special-section .team-container,
+  .services-section .services-container {
+    gap: 1.5rem;
   }
 }
 
-/* --- SECTION INTRODUCTIVE --- */
-.welcome-section {
-  background-color: var(--light-bg);
-  padding: 60px 20px;
-  text-align: center;
-}
-.welcome-section {
-	scroll-margin-top: 130px; /* hauteur du header */
-}
-.welcome-section .container {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.welcome-section h2 {
-  font-size: 2rem;
-  color: var(--primary-green-dark);
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-
-.welcome-section p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin: 0 auto;
-}
-
-/* --- FOOTER --- */
-.footer {
-  background-color: #000;
-  color: #fff;
-  padding: 40px 20px;
-  text-align: center;
-  margin-top: 60px;
-}
-
-.footer-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-col {
-  flex: 1 1 30%;
-  min-width: 250px;
-  display: flex;
-  flex-direction: column;
-}
-
-.footer-col h3 {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  color: #fff;
-  border-bottom: 2px solid var(--primary-green);
-  display: inline-block;
-  padding-bottom: 5px;
-}
-
-.footer-col p,
-.footer-col ul {
-  margin: 0;
-  padding: 0;
-  color: #fff;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.footer-col ul {
-  list-style: none;
-  margin-top: 10px;
-}
-
-.footer-col ul li {
-  margin-bottom: 10px;
-}
-
-/* Liens du footer */
-.footer-col ul li a,
-.footer a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-col ul li a:hover,
-.footer a:hover {
-  color: #FFD700;
-}
-
-.footer-bottom {
-  margin-top: 30px;
-  padding-top: 15px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  color: #e0e0e0;
-  font-size: 0.9rem;
-  text-align: center;
-}
-
-/* --- MEDIA QUERIES POUR FOOTER --- */
 @media (max-width: 768px) {
-  .footer-wrapper {
+  .special-section .team-container,
+  .services-section .services-container {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
-  .footer-col {
-    flex: 1 1 100%;
-    min-width: auto;
-    margin-bottom: 20px;
+  .special-section .team-photo img,
+  .services-section .service-card img {
+    width: 80%;
+    max-width: 320px;
   }
-}
 
-
-/* --- MEDIA QUERIES --- */
-@media (max-width: 768px) {
-  .hero-text h1 { font-size: 1.8rem; }
-  .hero-text p { font-size: 0.95rem; }
-  .header { flex-direction: column; gap: 10px; align-items: center; }
-  .header .nav { display: flex; flex-wrap: wrap; justify-content: center; }
-  .header .nav a { margin: 5px; }
+  .special-section .team-comment,
+  .services-section .service-card {
+    max-width: 90%;
+  }
 }
