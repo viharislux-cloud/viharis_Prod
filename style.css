@@ -96,7 +96,7 @@ a:focus {
 }
 
 .hero-image img {
-  width: 100%;
+  width: 600;
   height: auto;
   object-fit: cover;
   filter: brightness(70%);
