@@ -317,12 +317,14 @@ a:focus {
 
 /* --- MEDIA QUERIES --- */
 @media (max-width: 750px) {
+	.welcome-section {scroll-margin-top: 100px; 
   .hero-text h1 { font-size: 1.0rem; }
   .hero-text p { font-size: 0.5rem; }
   .header { flex-direction: column; gap: 10px; align-items: center; }
   .header .nav { display: flex; flex-wrap: wrap; justify-content: center; }
   .header .nav a { margin: 5px; }
 }
+
 
 
 
