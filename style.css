@@ -299,7 +299,7 @@ a:focus {
 /* --- MEDIA QUERIES --- */
 @media (max-width: 768px) {
 .welcome-section {
-	scroll-margin-top: 150px; /* hauteur du header */
+	scroll-margin-top: 170px; /* hauteur du header */
 }
   .hero-text h1 { font-size: 1.8rem; }
   .hero-text p { font-size: 0.5rem; }
