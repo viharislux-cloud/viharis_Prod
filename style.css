@@ -142,8 +142,6 @@ a:focus {
   padding: 0 20px;
 }
 
-.hero-text h1,
-.hero-text p,
 .hero-text .btn {
   opacity: 0;
   transform: translateY(20px);
@@ -303,6 +301,7 @@ a:focus {
 }
   .hero-text h1 { font-size: 1.8rem; }
   .hero-text p { font-size: 1rem; }
+  font-weight: 300
   
   .header { flex-direction: column; gap: 10px; align-items: center; }
   .header .nav { display: flex; flex-wrap: wrap; justify-content: center; }
