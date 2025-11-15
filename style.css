@@ -46,7 +46,7 @@ a:focus {
   transition: background-color 0.3s ease, transform 0.3s ease;
   border: none;
   background-color: var(--primary-green);
-  color: #fff;
+  color: #ffffff;
   padding: 12px 25px;
 }
 
