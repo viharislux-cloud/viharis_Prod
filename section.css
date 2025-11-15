@@ -53,7 +53,7 @@
 	.special-section .container {
 	  display: flex;
 	  align-items: flex-start;
-	  justify-content: center;
+	  justify-content: flex-start;
 	  gap: 2rem;
 	  flex-wrap: wrap;
 	}
@@ -63,6 +63,7 @@
 
 	/* Image */
 	.special-section .container .photo  img {
+
 	width: 260px;
 	  height: auto;
 	  border-radius: 16px;
@@ -94,9 +95,10 @@
 
 	/* Texte */
 	.special-section .comment {
+		flex:1;
  max-width: 100vw;
   width: 100%;
-	  color: var(--text-color);
+
 	}
 
 	.special-section .comment h3 {
@@ -112,7 +114,7 @@
 	}
 
 	.special-section .comment a {
-	  color: var(--primary-green);
+	  
 	  text-decoration: none;
 	}
 
@@ -140,29 +142,21 @@
 	/* --- Pour la gestion des mobiles --- */
 /*----------------------------------------------------------------------------------------------*/
 
-@media (max-width: 992px) {
-  .special-section .team-container,
-  .services-section .services-container {
-    gap: 1.5rem;
-  }
-}
+
 
 @media (max-width: 768px) {
-  .special-section .team-container,
-  .services-section .services-container {
-    flex-direction: column;
+  .special-section .container {
+    flex-direction: column; /* image au-dessus du texte */
     align-items: center;
     text-align: center;
   }
 
-  .special-section .team-photo img,
-  .services-section .service-card img {
-    width: 80%;
-    max-width: 320px;
+  .special-section .comment {
+    width: 90%; /* prend presque toute la largeur */
+    min-width: unset;
   }
 
-  .special-section .team-comment,
-  .services-section .service-card {
-    max-width: 90%;
+  .special-section .photo img {
+    width: 80%; /* réduit légèrement pour mobile */
   }
 }
