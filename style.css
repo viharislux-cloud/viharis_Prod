@@ -304,6 +304,15 @@ a:focus {
   .hero-text p { font-size: 1rem; }
   font-weight: 300
   
+  .header {
+    justify-content: center; /* centre tous les éléments horizontalement */
+    padding: 20px;
+  }
+
+  .header .logo img {
+    height: 80px; /* réduire la taille du logo sur mobile */
+  }
+  
   .header { flex-direction: column; gap: 10px; align-items: center; }
   .header .nav { display: flex; flex-wrap: wrap; justify-content: center; }
   .header .nav a { margin: 5px; }
