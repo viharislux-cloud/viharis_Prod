@@ -117,7 +117,7 @@ a:focus {
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 100vw;
-  white-space: nowrap;
+  width: 100%;
   text-align: center;
   color: #fff;
   padding: 0 20px;
@@ -175,7 +175,7 @@ a:focus {
 .welcome-section {
   background-color: var(--light-bg);
   padding: 60px 20px;
-  text-align: center;
+  
 }
 .welcome-section {
 	scroll-margin-top: 130px; /* hauteur du header */
@@ -190,12 +190,14 @@ a:focus {
   color: var(--primary-green-dark);
   margin-bottom: 20px;
   font-weight: 700;
+  text-align: center;
 }
 
 .welcome-section p {
   font-size: 1.1rem;
   line-height: 1.8;
   margin: 0 auto;
+  text-align: justify;
 }
 
 /* --- FOOTER --- */
@@ -293,10 +295,12 @@ a:focus {
 .welcome-section {
 	scroll-margin-top: 170px; /* hauteur du header */
 }
-  .hero-text h1 { font-size: 1.8rem; }
-  .hero-text p { font-size: 1rem; }
-  font-weight: 300
-  
+  .hero-text h1 { font-size: 1,1rem; }
+  .hero-text p { font-size: 0,8rem; }
+.hero-text {
+    max-width: 100%; /* pour éviter que ton texte soit trop cassé */
+  }
+
   .header {
     justify-content: center; /* centre tous les éléments horizontalement */
     padding: 20px;
