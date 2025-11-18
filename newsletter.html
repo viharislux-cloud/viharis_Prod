@@ -125,7 +125,7 @@
 <div id="footer-placeholder"></div>
 
 <script>
-  fetch('/footer.html') // chemin absolu depuis la racine
+  fetch('./footer.html') // chemin absolu depuis la racine
     .then(response => {
       console.log('Réponse fetch status:', response.status); // affiche le code HTTP
       if (!response.ok) throw new Error('Footer non trouvé');
@@ -159,5 +159,6 @@
 </script>
 </body>
 </html>
+
 
 
