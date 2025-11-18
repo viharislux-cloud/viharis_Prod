@@ -125,7 +125,16 @@
 <div id="footer-placeholder"></div>
 
 <script>
+<<<<<<< Updated upstream
   fetch('/footer.html') // chemin absolu depuis la racine
+=======
+<<<<<<< HEAD
+  fetch('/footer.html') // chemin absolu depuis la racine
+=======
+  // On récupère le footer depuis le fichier footer.html
+  fetch("/footer.html") // chemin relatif vers ton footer
+>>>>>>> ca3b121a1d8a15b179f47c47f1acfb9ff0a8b584
+>>>>>>> Stashed changes
     .then(response => {
       console.log('Réponse fetch status:', response.status); // affiche le code HTTP
       if (!response.ok) throw new Error('Footer non trouvé');
@@ -160,4 +169,7 @@
 </body>
 </html>
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
