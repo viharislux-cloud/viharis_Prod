@@ -9,8 +9,9 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="contact.css">
 
-
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <!-- 🔒 Sécurité front-end pour GitHub Pages -->
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; img-src 'self' https:; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
 <style>
 
 
@@ -85,39 +86,38 @@
 <!-- section newsletter -->
 <section class="special-section">
 <div class="container">
-      <div class="comment">
-<h2>Inscrivez-vous à notre newsletter</h2>
-
-        <!-- Formulaire MailerLite -->
-        <div id="mlb2-32676945" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-32676945">
-                     <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                        <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1885164/forms/169606461550233453/subscribe" method="post">
-                            <div class="ml-form-formContent">
-                                <div class="ml-form-fieldRow ml-last-item">
-                                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                                        <input type="email" class="form-control" name="fields[email]" placeholder="Email" autocomplete="email" required>
-                                    </div>
-                                </div>
+    <div class="comment">	
+	<h2>Inscrivez-vous à notre newsletter</h2>
+    <!-- Formulaire MailerLite -->
+		<div id="mlb2-32676945" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-32676945">
+            <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1885164/forms/169606461550233453/subscribe" method="post">
+                <div class="ml-form-formContent">
+                     <div class="ml-form-fieldRow ml-last-item">
+                           <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                               <input type="email" class="form-control" name="fields[email]" placeholder="Email" autocomplete="email" required>
                             </div>
+                     </div>
+                </div>
                             <input type="hidden" name="ml-submit" value="1">
                             <input type="hidden" name="anticsrf" value="true">
-                            <div class="ml-form-embedSubmit">
+							<div class="ml-form-embedSubmit">
                                 <button type="submit" class="btn">S’inscrire</button>
                             </div>
-                        </form>
-                    </div>
-                    <div class="ml-form-successBody row-success">
-                        <div class="comment">
-                            <h3>Merci !</h3>
-                            <p>Vous avez rejoint notre liste de diffusion avec succès.</p>
+            </form>
+            </div>
+            <div class="ml-form-successBody row-success">
+                  <div class="comment">
+                        <h3>Merci !</h3>
+                         <p>Vous avez rejoint notre liste de diffusion avec succès.</p>
 				
-                        </div>
-                    </div>
-                </div>
+                   </div>
+            </div>
+        </div>
             
        
-       </div>
     </div>
+ </div>
 	
 </section>
 </main>
