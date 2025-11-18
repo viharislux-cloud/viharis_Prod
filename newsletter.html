@@ -125,17 +125,19 @@
 <div id="footer-placeholder"></div>
 
 <script>
-  // On récupère le footer depuis le fichier footer.html
-  fetch("/footer.html") // chemin relatif vers ton footer
+  fetch('/footer.html') // chemin absolu depuis la racine
     .then(response => {
+      console.log('Réponse fetch status:', response.status); // affiche le code HTTP
       if (!response.ok) throw new Error('Footer non trouvé');
       return response.text();
     })
     .then(data => {
+      console.log('Footer chargé avec succès !'); // confirme que le texte est bien récupéré
       document.getElementById('footer-placeholder').innerHTML = data;
     })
-    .catch(error => console.error('Erreur:', error));
+    .catch(error => console.error('Erreur fetch:', error));
 </script>
+
 
 
 <!-- Scripts -->
@@ -157,4 +159,5 @@
 </script>
 </body>
 </html>
+
 
