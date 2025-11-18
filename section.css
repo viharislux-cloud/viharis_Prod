@@ -56,6 +56,7 @@
 	  justify-content: flex-start;
 	  gap: 2rem;
 	  flex-wrap: wrap;
+
 	}
 	/*----------------------------------------------------------------------------------------------*/
 	/*Format des photos*/
@@ -96,6 +97,13 @@
 	/* Texte */
 	.special-section .comment {
 		flex:1;
+ max-width: 100vw;
+  width: 100%;
+
+	}
+	
+		.special-section .commentindex {
+height: 200px;
  max-width: 100vw;
   width: 100%;
 
