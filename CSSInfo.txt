@@ -1,0 +1,803 @@
+/* --- VARIABLES ET COULEURS --- */
+:root {
+  --primary-green: #4E8B80; /* Couleur principale verte */
+  --primary-green-dark: #21867c; /* Vert foncé pour hover ou accent */
+  --text-color: #333; /* Couleur du texte par défaut */
+  --bg-color: #fff; /* Couleur de fond principale */
+  --bg-color-section: #fff; /* Fond des sections */
+  --light-bg: #fafafa; /* Fond clair pour certaines sections */
+  --shadow-color: rgba(0,0,0,0.1); /* Ombre légère */
+  --shadow-hover: rgba(0,0,0,0.15); /* Ombre plus forte au survol */
+}
+
+/* --- GLOBAL --- */
+*, *::before, *::after {
+  box-sizing: border-box; /* Inclut padding et border dans la largeur */
+}
+
+body {
+  font-family: 'Open Sans', sans-serif; /* Police principale */
+  line-height: 1.6; /* Hauteur de ligne pour lisibilité */
+  margin: 0; /* Supprime marge par défaut */
+  padding: 0; /* Supprime padding par défaut */
+  background-color: var(--bg-color); /* Fond du body */
+  color: var(--text-color); /* Couleur du texte */
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Poppins', sans-serif; /* Police pour titres */
+  margin: 0; /* Supprime marge par défaut */
+}
+
+a {
+  text-decoration: none; /* Supprime soulignement */
+  color: var(--primary-green); /* Couleur des liens */
+}
+
+a:focus {
+  outline: 2px solid var(--primary-green-dark); /* Focus accessible */
+  outline-offset: 2px; /* Décalage de l'outline */
+}
+
+/* --- BOUTONS --- */
+html {
+  scroll-behavior: smooth; /* Défilement fluide */
+}
+
+.btn {
+  font-weight: 600; /* Texte en gras */
+  border-radius: 50px; /* Coins arrondis */
+  cursor: pointer; /* Curseur pointeur */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transition hover */
+  border: none; /* Supprime bordure */
+  background-color: var(--primary-green); /* Fond vert */
+  color: #ffffff; /* Texte blanc */
+  padding: 12px 25px; /* Espacement interne */
+}
+
+.btn:hover, .btn:focus {
+  background-color: var(--primary-green-dark); /* Vert foncé au hover */
+  transform: scale(1.02); /* Légère augmentation taille */
+}
+
+/* --- HEADER --- */
+.header {
+  display: flex; /* Flexbox */
+  justify-content: space-between; /* Espace entre logo et nav */
+  align-items: center; /* Alignement vertical centre */
+  padding: 20px 40px; /* Espacement interne */
+  background-color: var(--bg-color); /* Fond blanc */
+  border-bottom: 1px solid #ddd; /* Ligne sous le header */
+  flex-wrap: wrap; /* Permet au contenu de passer à la ligne */
+  gap: 10px; /* Espacement entre éléments */
+}
+
+.header .logo img {
+  height: 120px; /* Hauteur du logo */
+  width: auto; /* Largeur auto */
+  display: block; /* Supprime espace inline */
+}
+
+/* Header sticky et ombre */
+.header {
+  position: sticky;  /* Fixe le header en haut */
+  top: 0; /* Positionné en haut */
+  z-index: 1000; /* Priorité sur autres éléments */
+  transition: box-shadow 0.3s ease; /* Transition ombre */
+}
+
+/* Ombre dynamique au scroll */
+.header.scrolled {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Ombre quand scroll */
+}
+
+/* --- HERO --- */
+.hero-image {
+  position: relative; /* Position pour overlay texte */
+  width: 100%; /* Largeur pleine */
+  height: 60vh; /* Hauteur relative à viewport */
+  min-height: 300px; /* Hauteur minimale */
+  overflow: hidden; /* Coupe le débordement image */
+}
+
+.hero-image img {
+  width: 100%; /* Largeur pleine */
+  height: 100%; /* Hauteur pleine */
+  object-fit: cover; /* Recadrage couverture */
+  object-position: center; /* Centre le sujet important */
+  filter: brightness(70%); /* Assombrir image */
+  transition: transform 0.3s ease; /* Animation hover */
+}
+
+.hero-image img:hover {
+  transform: scale(1.05); /* Zoom léger au hover */
+}
+
+/* TEXTE DU HERO - centré par position absolue */
+.hero-text {
+  position: absolute; /* Positionné sur l'image */
+  top: 50%; /* Centré vertical */
+  left: 50%; /* Centré horizontal */
+  transform: translate(-50%, -50%); /* Ajuste le centre exact */
+  max-width: 100vw; /* Largeur max */
+  width: 100%; /* Largeur pleine */
+  text-align: center; /* Texte centré */
+  color: #fff; /* Texte blanc */
+  padding: 0 20px; /* Padding horizontal */
+}
+
+/* TITRE */
+.hero-text h1 {
+  font-size: 2.2rem; /* Taille du titre */
+  font-weight: 700; /* Gras */
+  margin-bottom: 10px; /* Espacement sous le titre */
+  animation-delay: 0.3s; /* Retard animation */
+}
+
+/* PARAGRAPHE */
+.hero-text p {
+  font-size: 1.1rem; /* Taille texte */
+  font-weight: 300; /* Plus léger */
+  color: #f5f5f5; /* Gris clair */
+  animation-delay: 0.6s; /* Retard animation */
+}
+
+/* BOUTON */
+.hero-text .btn {
+  display: inline-block; /* Bloc inline */
+  background-color: var(--primary-green); /* Fond vert */
+  color: #fff; /* Texte blanc */
+  padding: 12px 30px; /* Espacement */
+  border-radius: 50px; /* Coins arrondis */
+  text-decoration: none; /* Pas de soulignement */
+  font-weight: 600; /* Texte semi-bold */
+
+  /* animation */
+  opacity: 0; /* Invisible initialement */
+  transform: translateY(20px); /* Décalage vertical */
+  animation: fadeSlide 1s forwards; /* Animation fade + slide */
+  animation-delay: 0.9s; /* Retard */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transition hover */
+}
+
+.hero-text .btn:hover {
+  transform: translateY(-3px); /* Remonte au hover */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* Ombre */
+}
+
+/* Animation clé */
+@keyframes fadeSlide {
+  to {
+    opacity: 1; /* Apparaît */
+    transform: translateY(0); /* Remonte à sa position */
+  }
+}
+
+#goto::before {
+  content: ""; /* Génère un espace invisible */
+  display: block; /* Bloc pour margin */
+  height: 120px; /* Hauteur offset header */
+  margin-top: -80px; /* Décalage pour ancre */
+}
+
+/* --- SECTION INTRODUCTIVE --- */
+.welcome-section {
+  background-color: var(--light-bg); /* Fond clair */
+  padding: 60px 20px; /* Padding section */
+}
+
+.welcome-section .container {
+  max-width: 900px; /* Largeur max container */
+  margin: 0 auto; /* Centrage horizontal */
+}
+
+.welcome-section h2 {
+  font-size: 2rem; /* Taille titre */
+  color: var(--primary-green-dark); /* Couleur titre */
+  margin-bottom: 20px; /* Espacement */
+  font-weight: 700; /* Gras */
+  text-align: center; /* Centré */
+}
+
+.welcome-section p {
+  font-size: 1.1rem; /* Taille texte */
+  line-height: 1.8; /* Hauteur ligne */
+  margin: 0 auto; /* Centré */
+  text-align: justify; /* Texte justifié */
+}
+
+/* --- FOOTER --- */
+.footer {
+  background-color: #000; /* Fond noir */
+  color: #fff; /* Texte blanc */
+  padding: 40px 20px; /* Padding */
+  text-align: center; /* Centré */
+  margin-top: 60px; /* Espacement au dessus */
+}
+
+.footer-wrapper {
+  display: flex; /* Flexbox */
+  flex-wrap: wrap; /* Wrap si trop large */
+  justify-content: space-between; /* Espace entre colonnes */
+  gap: 20px; /* Espacement */
+  max-width: 1200px; /* Largeur max */
+  margin: 0 auto; /* Centré horizontalement */
+}
+
+.footer-col {
+  flex: 1 1 30%; /* Flex colonne */
+  min-width: 250px; /* Largeur min */
+  display: flex; /* Flex interne */
+  flex-direction: column; /* Colonne */
+}
+
+.footer-col h3 {
+  font-size: 1.2rem; /* Taille titre */
+  margin-bottom: 15px; /* Espacement */
+  color: #fff; /* Blanc */
+  border-bottom: 2px solid var(--primary-green); /* Ligne verte */
+  display: inline-block; /* Inline-block pour bordure */
+  padding-bottom: 5px; /* Padding bas */
+}
+
+.footer-col p,
+.footer-col ul {
+  margin: 0; /* Supprime marge */
+  padding: 0; /* Supprime padding */
+  color: #fff; /* Blanc */
+  font-size: 0.95rem; /* Taille texte */
+  line-height: 1.6; /* Hauteur ligne */
+}
+
+.footer-col ul {
+  list-style: none; /* Supprime puces */
+  margin-top: 10px; /* Espacement */
+}
+
+.footer-col ul li {
+  margin-bottom: 10px; /* Espacement entre items */
+}
+
+/* Liens du footer */
+.footer-col ul li a,
+.footer a {
+  color: #fff; /* Blanc */
+  text-decoration: none; /* Supprime soulignement */
+  transition: color 0.3s ease; /* Transition hover */
+}
+
+.footer-col ul li a:hover,
+.footer a:hover {
+  color: #FFD700; /* Jaune au hover */
+}
+
+.footer-bottom {
+  margin-top: 30px; /* Espacement haut */
+  padding-top: 15px; /* Padding haut */
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Ligne séparatrice */
+  color: #e0e0e0; /* Gris clair */
+  font-size: 0.9rem; /* Taille texte */
+  text-align: center; /* Centré */
+}
+
+/* --- MEDIA QUERIES POUR FOOTER --- */
+@media (max-width: 768px) {
+  .footer-wrapper {
+    flex-direction: column; /* Colonne sur mobile */
+    align-items: center; /* Centré horizontal */
+    text-align: center; /* Texte centré */
+  }
+
+  .footer-col {
+    flex: 1 1 100%; /* Colonne pleine largeur */
+    min-width: auto; /* Supprime largeur min */
+    margin-bottom: 20px; /* Espacement bas */
+  }
+}
+/* --- VARIABLES ET COULEURS --- */
+:root {
+  --primary-green: #4E8B80; /* Couleur principale verte */
+  --primary-green-dark: #21867c; /* Vert foncé pour hover ou accent */
+  --text-color: #333; /* Couleur du texte par défaut */
+  --bg-color: #fff; /* Couleur de fond principale */
+  --bg-color-section: #fff; /* Fond des sections */
+  --light-bg: #fafafa; /* Fond clair pour certaines sections */
+  --shadow-color: rgba(0,0,0,0.1); /* Ombre légère */
+  --shadow-hover: rgba(0,0,0,0.15); /* Ombre plus forte au survol */
+}
+
+/* --- GLOBAL --- */
+*, *::before, *::after {
+  box-sizing: border-box; /* Inclut padding et border dans la largeur */
+}
+
+body {
+  font-family: 'Open Sans', sans-serif; /* Police principale */
+  line-height: 1.6; /* Hauteur de ligne pour lisibilité */
+  margin: 0; /* Supprime marge par défaut */
+  padding: 0; /* Supprime padding par défaut */
+  background-color: var(--bg-color); /* Fond du body */
+  color: var(--text-color); /* Couleur du texte */
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Poppins', sans-serif; /* Police pour titres */
+  margin: 0; /* Supprime marge par défaut */
+}
+
+a {
+  text-decoration: none; /* Supprime soulignement */
+  color: var(--primary-green); /* Couleur des liens */
+}
+
+a:focus {
+  outline: 2px solid var(--primary-green-dark); /* Focus accessible */
+  outline-offset: 2px; /* Décalage de l'outline */
+}
+
+/* --- BOUTONS --- */
+html {
+  scroll-behavior: smooth; /* Défilement fluide */
+}
+
+.btn {
+  font-weight: 600; /* Texte en gras */
+  border-radius: 50px; /* Coins arrondis */
+  cursor: pointer; /* Curseur pointeur */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transition hover */
+  border: none; /* Supprime bordure */
+  background-color: var(--primary-green); /* Fond vert */
+  color: #ffffff; /* Texte blanc */
+  padding: 12px 25px; /* Espacement interne */
+}
+
+.btn:hover, .btn:focus {
+  background-color: var(--primary-green-dark); /* Vert foncé au hover */
+  transform: scale(1.02); /* Légère augmentation taille */
+}
+
+/* --- HEADER --- */
+.header {
+  display: flex; /* Flexbox */
+  justify-content: space-between; /* Espace entre logo et nav */
+  align-items: center; /* Alignement vertical centre */
+  padding: 20px 40px; /* Espacement interne */
+  background-color: var(--bg-color); /* Fond blanc */
+  border-bottom: 1px solid #ddd; /* Ligne sous le header */
+  flex-wrap: wrap; /* Permet au contenu de passer à la ligne */
+  gap: 10px; /* Espacement entre éléments */
+}
+
+.header .logo img {
+  height: 120px; /* Hauteur du logo */
+  width: auto; /* Largeur auto */
+  display: block; /* Supprime espace inline */
+}
+
+/* Header sticky et ombre */
+.header {
+  position: sticky;  /* Fixe le header en haut */
+  top: 0; /* Positionné en haut */
+  z-index: 1000; /* Priorité sur autres éléments */
+  transition: box-shadow 0.3s ease; /* Transition ombre */
+}
+
+/* Ombre dynamique au scroll */
+.header.scrolled {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Ombre quand scroll */
+}
+
+/* --- HERO --- */
+.hero-image {
+  position: relative; /* Position pour overlay texte */
+  width: 100%; /* Largeur pleine */
+  height: 60vh; /* Hauteur relative à viewport */
+  min-height: 300px; /* Hauteur minimale */
+  overflow: hidden; /* Coupe le débordement image */
+}
+
+.hero-image img {
+  width: 100%; /* Largeur pleine */
+  height: 100%; /* Hauteur pleine */
+  object-fit: cover; /* Recadrage couverture */
+  object-position: center; /* Centre le sujet important */
+  filter: brightness(70%); /* Assombrir image */
+  transition: transform 0.3s ease; /* Animation hover */
+}
+
+.hero-image img:hover {
+  transform: scale(1.05); /* Zoom léger au hover */
+}
+
+/* TEXTE DU HERO - centré par position absolue */
+.hero-text {
+  position: absolute; /* Positionné sur l'image */
+  top: 50%; /* Centré vertical */
+  left: 50%; /* Centré horizontal */
+  transform: translate(-50%, -50%); /* Ajuste le centre exact */
+  max-width: 100vw; /* Largeur max */
+  width: 100%; /* Largeur pleine */
+  text-align: center; /* Texte centré */
+  color: #fff; /* Texte blanc */
+  padding: 0 20px; /* Padding horizontal */
+}
+
+/* TITRE */
+.hero-text h1 {
+  font-size: 2.2rem; /* Taille du titre */
+  font-weight: 700; /* Gras */
+  margin-bottom: 10px; /* Espacement sous le titre */
+  animation-delay: 0.3s; /* Retard animation */
+}
+
+/* PARAGRAPHE */
+.hero-text p {
+  font-size: 1.1rem; /* Taille texte */
+  font-weight: 300; /* Plus léger */
+  color: #f5f5f5; /* Gris clair */
+  animation-delay: 0.6s; /* Retard animation */
+}
+
+/* BOUTON */
+.hero-text .btn {
+  display: inline-block; /* Bloc inline */
+  background-color: var(--primary-green); /* Fond vert */
+  color: #fff; /* Texte blanc */
+  padding: 12px 30px; /* Espacement */
+  border-radius: 50px; /* Coins arrondis */
+  text-decoration: none; /* Pas de soulignement */
+  font-weight: 600; /* Texte semi-bold */
+
+  /* animation */
+  opacity: 0; /* Invisible initialement */
+  transform: translateY(20px); /* Décalage vertical */
+  animation: fadeSlide 1s forwards; /* Animation fade + slide */
+  animation-delay: 0.9s; /* Retard */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transition hover */
+}
+
+.hero-text .btn:hover {
+  transform: translateY(-3px); /* Remonte au hover */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* Ombre */
+}
+
+/* Animation clé */
+@keyframes fadeSlide {
+  to {
+    opacity: 1; /* Apparaît */
+    transform: translateY(0); /* Remonte à sa position */
+  }
+}
+
+#goto::before {
+  content: ""; /* Génère un espace invisible */
+  display: block; /* Bloc pour margin */
+  height: 120px; /* Hauteur offset header */
+  margin-top: -80px; /* Décalage pour ancre */
+}
+
+/* --- SECTION INTRODUCTIVE --- */
+.welcome-section {
+  background-color: var(--light-bg); /* Fond clair */
+  padding: 60px 20px; /* Padding section */
+}
+
+.welcome-section .container {
+  max-width: 900px; /* Largeur max container */
+  margin: 0 auto; /* Centrage horizontal */
+}
+
+.welcome-section h2 {
+  font-size: 2rem; /* Taille titre */
+  color: var(--primary-green-dark); /* Couleur titre */
+  margin-bottom: 20px; /* Espacement */
+  font-weight: 700; /* Gras */
+  text-align: center; /* Centré */
+}
+
+.welcome-section p {
+  font-size: 1.1rem; /* Taille texte */
+  line-height: 1.8; /* Hauteur ligne */
+  margin: 0 auto; /* Centré */
+  text-align: justify; /* Texte justifié */
+}
+
+/* --- FOOTER --- */
+.footer {
+  background-color: #000; /* Fond noir */
+  color: #fff; /* Texte blanc */
+  padding: 40px 20px; /* Padding */
+  text-align: center; /* Centré */
+  margin-top: 60px; /* Espacement au dessus */
+}
+
+.footer-wrapper {
+  display: flex; /* Flexbox */
+  flex-wrap: wrap; /* Wrap si trop large */
+  justify-content: space-between; /* Espace entre colonnes */
+  gap: 20px; /* Espacement */
+  max-width: 1200px; /* Largeur max */
+  margin: 0 auto; /* Centré horizontalement */
+}
+
+.footer-col {
+  flex: 1 1 30%; /* Flex colonne */
+  min-width: 250px; /* Largeur min */
+  display: flex; /* Flex interne */
+  flex-direction: column; /* Colonne */
+}
+
+.footer-col h3 {
+  font-size: 1.2rem; /* Taille titre */
+  margin-bottom: 15px; /* Espacement */
+  color: #fff; /* Blanc */
+  border-bottom: 2px solid var(--primary-green); /* Ligne verte */
+  display: inline-block; /* Inline-block pour bordure */
+  padding-bottom: 5px; /* Padding bas */
+}
+
+.footer-col p,
+.footer-col ul {
+  margin: 0; /* Supprime marge */
+  padding: 0; /* Supprime padding */
+  color: #fff; /* Blanc */
+  font-size: 0.95rem; /* Taille texte */
+  line-height: 1.6; /* Hauteur ligne */
+}
+
+.footer-col ul {
+  list-style: none; /* Supprime puces */
+  margin-top: 10px; /* Espacement */
+}
+
+.footer-col ul li {
+  margin-bottom: 10px; /* Espacement entre items */
+}
+
+/* Liens du footer */
+.footer-col ul li a,
+.footer a {
+  color: #fff; /* Blanc */
+  text-decoration: none; /* Supprime soulignement */
+  transition: color 0.3s ease; /* Transition hover */
+}
+
+.footer-col ul li a:hover,
+.footer a:hover {
+  color: #FFD700; /* Jaune au hover */
+}
+
+.footer-bottom {
+  margin-top: 30px; /* Espacement haut */
+  padding-top: 15px; /* Padding haut */
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Ligne séparatrice */
+  color: #e0e0e0; /* Gris clair */
+  font-size: 0.9rem; /* Taille texte */
+  text-align: center; /* Centré */
+}
+
+/* --- MEDIA QUERIES POUR FOOTER --- */
+@media (max-width: 768px) {
+  .footer-wrapper {
+    flex-direction: column; /* Colonne sur mobile */
+    align-items: center; /* Centré horizontal */
+    text-align: center; /* Texte centré */
+  }
+
+  .footer-col {
+    flex: 1 1 100%; /* Colonne pleine largeur */
+    min-width: auto; /* Supprime largeur min */
+    margin-bottom: 20px; /* Espacement bas */
+  }
+}
+
+/*----------------------------------------------------------------------------------------------*/
+/*Format des Colonnes*/	
+/*----------------------------------------------------------------------------------------------*/
+.services-row {
+  display: flex; /* Utilisation de flexbox pour les colonnes */
+  flex-wrap: wrap; /* Permet aux colonnes de passer à la ligne si trop large */
+  gap: 20px; /* Espace entre les colonnes */
+  justify-content: center; /* Centre les colonnes si la ligne n’est pas remplie */
+  max-width: 1000px; /* Largeur maximale de la ligne */
+  margin: 0 auto; /* Centre horizontalement sur la page */
+}
+
+/*----------------------------------------------------------------------------------------------*/
+/*Format des sections spéciales*/
+/*----------------------------------------------------------------------------------------------*/
+.special-section {
+  flex: 1 1 300px; /* Largeur minimale 300px, peut grandir */
+  max-width: calc((1000px - 2 * 20px) / 4); /* Largeur max par section pour 4 colonnes avec gap */
+  box-sizing: border-box; /* Inclut padding et border dans la largeur */
+}
+
+.special-section {
+  background-color: var(--bg-color-section); /* Fond blanc */
+  padding: 3rem 1rem; /* Padding vertical et horizontal */
+  border-radius: 16px; /* Coins arrondis */
+  box-shadow: 0 4px 10px var(--shadow-color); /* Ombre normale */
+  transition: box-shadow 0.3s ease; /* Animation de l’ombre */
+  margin: 2rem auto; /* Marge verticale et centrage horizontal */
+  max-width: 1000px; /* Largeur max globale */
+}
+
+.special-section:hover {
+  box-shadow: 0 6px 16px var(--shadow-hover); /* Ombre plus prononcée au survol */
+}
+
+.special-section h2 {
+  color: var(--primary-green-dark); /* Couleur titre */
+  text-align: center; /* Titre centré */
+  margin-bottom: 2rem; /* Espacement sous le titre */
+}
+
+/*----------------------------------------------------------------------------------------------*/
+/*Format des containers internes*/
+/*----------------------------------------------------------------------------------------------*/
+.special-section .container {
+  display: flex; /* Flexbox pour le contenu interne */
+  align-items: flex-start; /* Alignement vertical au top */
+  justify-content: flex-start; /* Aligne contenu à gauche */
+  gap: 2rem; /* Espace entre éléments */
+  flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+}
+
+/*----------------------------------------------------------------------------------------------*/
+/*Format des photos*/
+/*----------------------------------------------------------------------------------------------*/
+.special-section .container .photo img {
+  width: 260px; /* Largeur fixe de l’image */
+  height: auto; /* Hauteur proportionnelle */
+  border-radius: 16px; /* Coins arrondis */
+  object-fit: cover; /* Recadrage couverture */
+  box-shadow: 0 4px 8px var(--shadow-color); /* Ombre légère */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation hover */
+}
+
+.services-section .container img {
+  width: 100%; /* Image responsive */
+  height: 200px; /* Hauteur fixe */
+  object-fit: cover; /* Recadrage couverture */
+}
+
+/* Image miniature */
+.special-section .container .photoMiniature img {
+  bottom: 20px; /* Décalage bas (pour position absolute si besoin) */
+  right: 10px; /* Décalage droite */
+  width: 120px; /* Largeur miniature */
+  border-radius: 10px; /* Coins arrondis */
+  opacity: 0.9; /* Légère transparence */
+}
+
+/*----------------------------------------------------------------------------------------------*/
+/*Format du texte*/
+/*----------------------------------------------------------------------------------------------*/
+.special-section .comment {
+  flex: 1; /* Prend tout l’espace disponible */
+  max-width: 100vw; /* Largeur max viewport */
+  width: 100%; /* Largeur pleine */
+}
+
+.special-section .commentindex {
+  height: 200px; /* Hauteur fixe */
+  max-width: 100vw; /* Largeur max viewport */
+  width: 100%; /* Largeur pleine */
+}
+
+.special-section .comment h3 {
+  color: var(--primary-green-dark); /* Couleur titre interne */
+  margin-top: 0; /* Pas de marge haut */
+  margin-bottom: 0.5rem; /* Petit espacement */
+  font-size: 1rem; /* Taille du titre */
+}
+
+.special-section .comment p {
+  line-height: 1.5; /* Hauteur de ligne */
+  text-align: justify; /* Texte justifié */
+}
+
+.special-section .comment a {
+  text-decoration: none; /* Supprime soulignement des liens */
+}
+
+.special-section .comment a:hover {
+  text-decoration: underline; /* Soulignement au hover */
+}
+
+/*----------------------------------------------------------------------------------------------*/
+/*Meditation - Calendrier*/
+/*----------------------------------------------------------------------------------------------*/
+.special-section .rendezvous-calendrier {
+  flex: 1 1 50%; /* Prend moitié de largeur */
+  min-width: 350px; /* Largeur minimale */
+  display: flex; /* Flex pour le widget */
+}
+
+.special-section .rendezvous-calendrier .calendly-inline-widget {
+  flex: 1; /* Prend toute la largeur du parent */
+  width: 100%; /* Largeur complète */
+  min-height: 600px; /* Hauteur minimum du calendrier */
+  border-radius: 12px; /* Coins arrondis */
+  overflow: hidden; /* Coupe débordement */
+}
+
+/*----------------------------------------------------------------------------------------------*/
+/* --- Pour la gestion des mobiles --- */
+/*----------------------------------------------------------------------------------------------*/
+@media (max-width: 768px) {
+
+  /* Special Section - container */
+  .special-section .container {
+    flex-direction: column; /* Passage vertical des éléments */
+    align-items: center; /* Centre les éléments */
+    text-align: center; /* Texte centré */
+  }
+
+  /* Special Section - comment */
+  .special-section .comment {
+    width: 90%; /* Largeur réduite pour mobile */
+    min-width: unset; /* Supprime largeur minimale */
+  }
+
+  /* Special Section - images */
+  .special-section .photo img {
+    width: 80%; /* Largeur adaptée pour mobile */
+  }
+
+  /* Section Introductive - offset pour header sticky */
+  .welcome-section {
+    scroll-margin-top: 170px; /* Décalage pour ancre */
+  }
+
+  /* Hero Text */
+  .hero-text {
+    max-width: 100%; /* Largeur complète */
+  }
+
+  .hero-text h1 {
+    font-size: 1.1rem; /* Taille réduite titre */
+  }
+
+  .hero-text p {
+    font-size: 0.8rem; /* Taille réduite texte */
+  }
+
+  /* Header */
+  .header {
+    flex-direction: column; /* Passage vertical des éléments */
+    gap: 10px; /* Espacement vertical */
+    align-items: center; /* Centre horizontalement */
+    justify-content: center; /* Centrage contenu */
+    padding: 20px; /* Padding réduit */
+  }
+
+  .header .logo img {
+    height: 80px; /* Logo réduit pour mobile */
+  }
+
+  .header .nav {
+    display: flex; /* Flex pour menu */
+    flex-wrap: wrap; /* Passage à la ligne si nécessaire */
+    justify-content: center; /* Menu centré */
+  }
+
+  .header .nav a {
+    margin: 5px; /* Espacement entre liens */
+  }
+
+  /* Footer */
+  .footer-wrapper {
+    flex-direction: column; /* Colonnes empilées verticalement */
+    align-items: center; /* Centre contenu */
+    text-align: center; /* Texte centré */
+  }
+
+  .footer-col {
+    flex: 1 1 100%; /* Colonne pleine largeur */
+    min-width: auto; /* Supprime min-width */
+    margin-bottom: 20px; /* Espacement entre colonnes */
+  }
+}
+
+
