@@ -1,22 +1,16 @@
-// Charger les fonts Google de manière compatible CSP
-const fonts = [
-  'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap',
-  'https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap'
-];
-
-fonts.forEach(url => {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = url;
-    document.head.appendChild(link);
-});
-
-// Exemple : scroll header
+// Scroll header optimisé
 const header = document.querySelector('.header');
+let lastScroll = 0;
+
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
+  const currentScroll = window.scrollY;
+  if (currentScroll === lastScroll) return; // éviter calculs inutiles
+  lastScroll = currentScroll;
+
+  if (currentScroll > 50) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+}, { passive: true }); // indique au navigateur que le scroll n’appelle pas preventDefault
+
