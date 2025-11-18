@@ -4,7 +4,7 @@
   --primary-green-dark: #21867c;
   --text-color: #333;
   --bg-color: #fff;
-  --bg-color-Section: #fff;
+  --bg-color-section: #fff;
   --light-bg: #fafafa;
   --shadow-color: rgba(0,0,0,0.1);
   --shadow-hover: rgba(0,0,0,0.15);
@@ -319,7 +319,7 @@ html {
   box-sizing: border-box;
 /*----------------------------------------------------------------------------------------------*/
 }.special-section {
-	  background-color: var(--bg-color-Section); /*Fond*/
+	  background-color: var(--bg-color-section); /*Fond*/
 	  padding: 3rem 1rem;
 	  border-radius: 16px; /*bon arrondi*/
 	  box-shadow: 0 4px 10px var(--shadow-color); /*Shaddow normal*/
