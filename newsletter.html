@@ -121,48 +121,22 @@
 </section>
 </main>
 <!-- FOOTER -->
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-wrapper">
+<!-- Ici, dans ton HTML là où tu veux le footer -->
+<div id="footer-placeholder"></div>
 
-        <!-- Colonne Liens utiles -->
-        <div class="footer-col">
-            <h3>Liens utiles</h3>
-            <ul>
-                <li><a href="/">Accueil</a></li>
-               <!--   <li><a href="prestations.html">Offres</a></li>
-				<li><a href="tarif.html">Nos tarif</a></li>-->
-				<li><a href="apropos.html">A propos de nous</a></li>
+<script>
+  // On récupère le footer depuis le fichier footer.html
+  fetch('footer.html') // chemin relatif vers ton footer
+    .then(response => {
+      if (!response.ok) throw new Error('Footer non trouvé');
+      return response.text();
+    })
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(error => console.error('Erreur:', error));
+</script>
 
-            </ul>
-			
-	
-        </div>
-
-        <!-- Colonne À propos -->
-        <div class="footer-col">
-      	<h3>Mentions légales</h3>
-            <ul>
-                <li><a href="rgpd.html">Politique de protection vie privée</a></li>
-                <li><a href="charte.html">Charte des masseurs</a></li>
-				<li><a href="condition.html">Condition générale de vente</a></li
-                </ul>
-     
-        </div>
-
-        <!-- Colonne Contact -->
-        <div class="footer-col">
-            <h3>Contactez-nous</h3>
-			  <ul>
-			  <li><a href="contact.html">Contact</a></li>
-			  <li><a href="newsletter.html">News letter</a></li>
-			  </ul>
-        </div>
-
-    </div>
-
-    <p class="footer-bottom">&copy; 2025 Viharis — Tous droits réservés - V 1.3.1</p>
-</footer>
 
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
