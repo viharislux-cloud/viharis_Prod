@@ -14,12 +14,12 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true }); // indique au navigateur que le scroll n’appelle pas preventDefault
 
-// Charger le footer depuis footer.html
-fetch('footer.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('footer-placeholder').innerHTML = data;
-  })
-  .catch(error => console.error('Erreur chargement footer:', error));
-
+document.addEventListener("DOMContentLoaded", function() {
+  fetch('/viharis_Prod/footer.html') // chemin vers ton footer
+    .then(response => response.text())
+    .then(data => {
+      document.body.insertAdjacentHTML('beforeend', data);
+    })
+    .catch(error => console.error('Erreur chargement footer:', error));
+});
 
