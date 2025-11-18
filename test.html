@@ -1,7 +1,15 @@
+<!-- Ici, dans ton HTML là où tu veux le footer -->
 <div id="footer-placeholder"></div>
-fetch('/footer.html')       // récupère le fichier footer.html
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('footer-placeholder').innerHTML = data;
-  })
-  .catch(err => console.error('Erreur chargement footer:', err));
+
+<script>
+  // On récupère le footer depuis le fichier footer.html
+  fetch('footer.html') // chemin relatif vers ton footer
+    .then(response => {
+      if (!response.ok) throw new Error('Footer non trouvé');
+      return response.text();
+    })
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(error => console.error('Erreur:', error));
+</script>
