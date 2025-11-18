@@ -126,7 +126,7 @@
 
 <script>
   // On récupère le footer depuis le fichier footer.html
-  fetch('/footer.html') // chemin relatif vers ton footer
+  fetch("footer.html") // chemin relatif vers ton footer
     .then(response => {
       if (!response.ok) throw new Error('Footer non trouvé');
       return response.text();
