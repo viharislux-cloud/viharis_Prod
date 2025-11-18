@@ -4,7 +4,7 @@
   --primary-green-dark: #21867c;
   --text-color: #333;
   --bg-color: #fff;
-  --bg-color section: #fff;
+  --bg-color-Section: #fff;
   --light-bg: #fafafa;
   --shadow-color: rgba(0,0,0,0.1);
   --shadow-hover: rgba(0,0,0,0.15);
@@ -407,7 +407,7 @@ height: 200px;
 	}
 
 	.special-section .comment p {
-	  line-height: 1,5;
+	  line-height: 1.5;
 	  text-align: justify;
 	}
 
@@ -440,44 +440,78 @@ height: 200px;
 	/* --- Pour la gestion des mobiles --- */
 /*----------------------------------------------------------------------------------------------*/
 
-
-
+/* --- MEDIA QUERIES POUR MOBILE --- */
 @media (max-width: 768px) {
+
+  /* Special Section - container */
   .special-section .container {
     flex-direction: column; /* image au-dessus du texte */
     align-items: center;
     text-align: center;
   }
 
+  /* Special Section - comment */
   .special-section .comment {
     width: 90%; /* prend presque toute la largeur */
     min-width: unset;
   }
 
+  /* Special Section - images */
   .special-section .photo img {
     width: 80%; /* réduit légèrement pour mobile */
   }
-}
 
-.welcome-section {
-	scroll-margin-top: 170px; /* hauteur du header */
-}
-  .hero-text h1 { font-size: 1.1rem; }
-  .hero-text p { font-size: 0.8rem; }
-.hero-text {
-    max-width: 100%; /* pour éviter que ton texte soit trop cassé */
+  /* Section Introductive - offset pour header sticky */
+  .welcome-section {
+    scroll-margin-top: 170px; /* hauteur du header */
   }
 
+  /* Hero Text */
+  .hero-text {
+    max-width: 100%; /* éviter que le texte soit trop cassé */
+  }
+
+  .hero-text h1 {
+    font-size: 1.1rem;
+  }
+
+  .hero-text p {
+    font-size: 0.8rem;
+  }
+
+  /* Header */
   .header {
-    justify-content: center; /* centre tous les éléments horizontalement */
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
   }
 
   .header .logo img {
     height: 80px; /* réduire la taille du logo sur mobile */
   }
-  
-  .header { flex-direction: column; gap: 10px; align-items: center; }
-  .header .nav { display: flex; flex-wrap: wrap; justify-content: center; }
-  .header .nav a { margin: 5px; }
+
+  .header .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .header .nav a {
+    margin: 5px;
+  }
+
+  /* Footer */
+  .footer-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-col {
+    flex: 1 1 100%;
+    min-width: auto;
+    margin-bottom: 20px;
+  }
 }
