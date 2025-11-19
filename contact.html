@@ -6,17 +6,22 @@
  <title>Viharis - Massage Tantriques Luxembourg Contact</title>
    <meta name="description" content="Viharis : Bien-être et détente. Découvrez nos massages tantriques, massage 5 continents, méditations et formations pour revitaliser votre corps et votre esprit.">
   <!-- 🔒 CSP fonctionnelle -->
-  <meta http-equiv="Content-Security-Policy"
-        content="
-          default-src 'none';
-          script-src 'self' https://cdn.jsdelivr.net https://maps.googleapis.com;
-          style-src 'self' https://fonts.googleapis.com https://maps.googleapis.com;
-          font-src 'self' https://fonts.gstatic.com;
-          img-src 'self' data: https:;
-          connect-src 'self' https://api.emailjs.com;
-          frame-src https://www.google.com https://maps.google.com;
-          frame-ancestors 'self';
-        ">
+ <meta http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self' *;
+        img-src 'self' * data: https://groot.mailerlite.com https://assets.mlcdn.com https://www.google.com https://maps.googleapis.com https://www.gstatic.com https://www.youtube.com;
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' * https://groot.mailerlite.com https://assets.mailerlite.com https://cdn.mailerlite.com https://static.mailerlite.com https://www.google.com https://maps.googleapis.com https://cdn.jsdelivr.net https://www.google-analytics.com https://www.gstatic.com https://www.google.com/recaptcha https://www.youtube.com https://static.ytimg.com;
+        style-src 'self' 'unsafe-inline' * https://fonts.googleapis.com https://assets.mlcdn.com https://fonts.gstatic.com https://maps.googleapis.com https://cdn.jsdelivr.net;
+        font-src 'self' * https://fonts.gstatic.com https://assets.mlcdn.com;
+        connect-src 'self' * https://api.emailjs.com https://www.google-analytics.com https://www.gstatic.com https://www.google.com/recaptcha;
+        frame-src 'self' * https://www.google.com https://maps.google.com https://www.youtube.com https://player.vimeo.com;
+        frame-ancestors 'self';
+        object-src 'none';
+        base-uri 'self';
+        form-action 'self' *;
+        upgrade-insecure-requests;
+        report-uri /csp-violation-report-endpoint;
+      ">	
 
   <meta http-equiv="Strict-Transport-Security"
         content="max-age=63072000; includeSubDomains; preload">
@@ -137,7 +142,16 @@ Nous vous répondrons dans les plus brefs délais !
             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         
       </div>-->
+        <section class="special-section" id="newsletter">
+            <h2>Viharis Newsletters</h2>
+            <div class="container">
+                <div class="comment">
 
+<!-- End MailerLite Universal -->
+<div class="ml-embedded" data-form="aLUWCJ"></div>
+       </div>
+            </div>
+        </section>
     </div>
   </section>
 </main>
