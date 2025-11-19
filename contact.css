@@ -96,23 +96,6 @@
 	  flex: 0 0 auto;
 	}
 
-	/* --- CHECKBOX (si utilisée) --- */
-	label.newsletter {
-	  display: flex;
-	  align-items: center;
-	  gap: 10px;
-	  margin-bottom: 20px;
-	  font-size: 0.95em;
-	  color: var(--text-color);
-	}
-
-	label.newsletter input[type="checkbox"] {
-	  width: 18px;
-	  height: 18px;
-	  accent-color: var(--primary-green);
-	  cursor: pointer;
-	  vertical-align: middle;
-	}
 
 	/* --- RESPONSIVE --- */
 	@media (max-width: 900px) {
