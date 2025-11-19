@@ -22,8 +22,7 @@
     /* Arrondit les coins du champ de saisie avec un rayon de 5px */
     border-radius: 5px;  
 
-    /* Définit la taille de la police à 1em (taille relative à l'élément parent) */
-    font-size: 1em;  
+
 
     /* Définit la couleur du texte à la valeur de la variable --text-color */
     color: var(--text-color);  
