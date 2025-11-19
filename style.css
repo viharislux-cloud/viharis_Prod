@@ -405,6 +405,13 @@ height: 250px;
 	  margin-bottom: 0.5rem;
 	  font-size: 1.0rem;
 	}
+	
+		.special-section .commentindex h3 {
+	  color: var(--primary-green-dark);
+	  margin-top: 0;
+	  margin-bottom: 0.5rem;
+	  font-size: 1.0rem;
+	}
 
 	.special-section .comment p {
 	  line-height: 1.5;
