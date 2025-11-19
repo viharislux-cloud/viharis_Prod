@@ -1,37 +1,4 @@
-	/* ================================================== */
-	/* CONTACT PAGE - CSS UNIFIÉ */
-	/* ================================================== */
 
-	/* --- VARIABLES DE COULEUR (à définir dans :root) --- */
-
-
-	/* --- CONTENEUR PRINCIPAL --- */
-	.contact-wrapper {
-	  display: flex;
-	  gap: 40px;
-	  flex-wrap: wrap;
-	  padding: 40px 20px;
-	  background-color: var(--light-bg);
-	  font-family: 'Open Sans', sans-serif;
-	}
-
-	/* --- FORMULAIRE ET INFO CONTACT --- */
-	.contact-form,
-	.contact-info {
-	  flex: 1 1 400px;
-	  background-color: var(--bg-color);
-	  padding: 30px;
-	  border-radius: 10px;
-	  box-shadow: 0 4px 10px var(--shadow-color);
-	}
-
-	/* --- TITRES --- */
-	.contact-form h2,
-	.contact-info h2 {
-	  color: var(--primary-green);
-	  margin-bottom: 20px;
-	  font-family: 'Poppins', sans-serif;
-	}
 
 	/* --- CHAMPS FORMULAIRES (TEXT, EMAIL, TEL, SELECT, TEXTAREA) --- */
 	.contact-form input[type="text"],
