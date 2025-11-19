@@ -6,28 +6,23 @@
 	.contact-form input[type="tel"],
 	.contact-form select,
 	.contact-form textarea,
-	.newsletter-in-col .ml-block-form input[type="email"] {
-	  width: 100%;
-	  padding: 12px 15px;
-	  margin-bottom: 15px;
-	  border: 1px solid var(--shadow-color);
-	  border-radius: 5px;
-	  font-size: 1em;
-	  color: var(--text-color);
-	  background-color: var(--bg-color);
-	  box-sizing: border-box;
-	  font-family: 'Open Sans', sans-serif;
-	  transition: border-color 0.25s ease, box-shadow 0.25s ease;
-	}
+	.ml-block-form input[type="email"] {
+		  width: 100%;
+		  padding: 12px 15px;
+		  margin-bottom: 15px;
+		  border: 1px solid var(--shadow-color);
+		  border-radius: 5px;
+		  font-size: 1em;
+		  color: var(--text-color);
+		  background-color: var(--bg-color);
+		  box-sizing: border-box;
+		  font-family: 'Poppins', sans-serif;
+		  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+		}
 
 	.contact-form input:focus,
 	.contact-form select:focus,
 	.contact-form textarea:focus,
-	.newsletter-in-col .ml-block-form input[type="email"]:focus {
-	  border-color: var(--primary-green);
-	  outline: none;
-	  box-shadow: 0 0 6px var(--shadow-color);
-	}
 
 	/* --- TEXTAREA SPECIFIQUE --- */
 	textarea#message {
@@ -52,13 +47,7 @@
 	  gap: 10px;
 	}
 
-	/* --- CONTACT INFO --- */
-	.contact-info p,
-	.contact-info a.link {
-	  font-size: 0.95em;
-	  color: var(--text-color);
-	  text-decoration: none;
-	}
+
 
 	.contact-info a.link:hover {
 	  color: var(--primary-green-dark);
@@ -77,24 +66,7 @@
 	  border: 0;
 	}
 
-	/* --- NEWSLETTER --- */
-	.newsletter-in-col {
-	  margin-top: 20px;
-	}
 
-	.newsletter-in-col .ml-block-form {
-	  display: flex;
-	  flex-wrap: wrap;
-	  gap: 10px;
-	}
-
-	.newsletter-in-col .ml-block-form input[type="email"] {
-	  flex: 1 1 300px;
-	}
-
-	.newsletter-in-col .ml-block-form button.btn {
-	  flex: 0 0 auto;
-	}
 
 
 	/* --- RESPONSIVE --- */
@@ -103,8 +75,4 @@
 		flex-direction: column;
 	  }
 	}
-.checkbox-line {
-  display: flex;
-  align-items: center;
-  gap: 8px; /* espace entre la checkbox et le texte */
-}
+
