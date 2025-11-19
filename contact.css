@@ -6,19 +6,41 @@
 	.contact-form input[type="tel"],
 	.contact-form select,
 	.contact-form textarea,
-	.ml-block-form input[type="email"] {
-		  width: 100%;
-		  padding: 12px 15px;
-		  margin-bottom: 15px;
-		  border: 1px solid var(--shadow-color);
-		  border-radius: 5px;
-		  font-size: 1em;
-		  color: var(--text-color);
-		  background-color: var(--bg-color);
-		  box-sizing: border-box;
-		  font-family: 'Poppins', sans-serif;
-		  transition: border-color 0.25s ease, box-shadow 0.25s ease;
-		}
+.ml-block-form input[type="email"] {
+    /* Définit la largeur du champ de saisie à 100% de son conteneur parent */
+    width: 100%;  
+
+    /* Ajoute un espacement interne de 12px en haut et en bas, et 15px à gauche et à droite */
+    padding: 12px 15px;  
+
+    /* Ajoute un espace de 15px sous le champ de saisie */
+    margin-bottom: 15px;  
+
+    /* Applique une bordure d'1px de couleur définie par la variable --shadow-color */
+    border: 1px solid var(--shadow-color);  
+
+    /* Arrondit les coins du champ de saisie avec un rayon de 5px */
+    border-radius: 5px;  
+
+    /* Définit la taille de la police à 1em (taille relative à l'élément parent) */
+    font-size: 1em;  
+
+    /* Définit la couleur du texte à la valeur de la variable --text-color */
+    color: var(--text-color);  
+
+    /* Définit la couleur de fond du champ de saisie à la valeur de la variable --bg-color */
+    background-color: var(--bg-color);  
+
+    /* Inclut le padding et la bordure dans le calcul de la largeur/hauteur totale de l'élément */
+    box-sizing: border-box;  
+
+    /* Utilise la police 'Poppins', avec une alternative sans-serif si elle n'est pas disponible */
+    font-family: 'Poppins', sans-serif;  
+
+    /* Applique une transition douce de 0.25s pour la couleur de la bordure et l'ombre portée */
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;  
+}
+
 
 	.contact-form input:focus,
 	.contact-form select:focus,
