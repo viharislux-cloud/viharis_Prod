@@ -208,6 +208,12 @@ html {
   margin-top: -80px; /* décale la section vers le haut */
 }
 
+.center-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 /* --- SECTION INTRODUCTIVE --- */
 .welcome-section {
   background-color: #F5F1E8;
