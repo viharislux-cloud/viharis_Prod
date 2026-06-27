@@ -491,7 +491,9 @@ height: 250px;
     z-index: 2000;
 }
 
-
+.menu {
+  transition: all 0.3s ease;
+}
 
 /*----------------------------------------------------------------------------------------------*/
 	/* --- Pour la gestion des mobiles --- */
@@ -571,8 +573,12 @@ height: 250px;
   }
 
   /* menu ouvert */
-  .menu.active {
-      display: block;
+ .menu.active {
+    display: block;
+
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
   /* nav vertical */
