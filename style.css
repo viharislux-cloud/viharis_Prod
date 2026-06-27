@@ -474,6 +474,25 @@ height: 250px;
   min-height: 600px; /* hauteur du calendrier sur desktop */
   border-radius: 12px;
   overflow: hidden;
+/* ------------------------- */
+/* HAMBURGER */
+/* ------------------------- */
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.hamburger span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    margin: 6px 0;
+    background: var(--primary-green-dark);
+    transition: .3s;
 }
 /*----------------------------------------------------------------------------------------------*/
 	/* --- Pour la gestion des mobiles --- */
@@ -518,28 +537,52 @@ height: 250px;
     font-size: 0.8rem;
   }
 
-  /* Header */
-  .header {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
+/* Header Mobile */
 
-  .header .logo img {
-    height: 80px; /* réduire la taille du logo sur mobile */
-  }
+.header {
+    padding:15px 20px;
+}
 
-  .header .nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+.header-section{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:relative;
+}
 
-  .header .nav a {
-    margin: 5px;
-  }
+.header .logo img{
+    height:70px;
+}
+
+.hamburger{
+    display:block;
+}
+
+.menu{
+    display:none;
+    position:absolute;
+    top:90px;
+    left:0;
+    width:100%;
+    background:white;
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+.menu.active{
+    display:block;
+}
+
+.nav{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+}
+
+.nav a{
+    padding:18px;
+    border-bottom:1px solid #eee;
+    text-align:center;
+}
 
   /* Footer */
   .footer-wrapper {
