@@ -1,18 +1,12 @@
-// Scroll header optimisé
-const header = document.querySelector('.header');
-let lastScroll = 0;
+document.addEventListener("DOMContentLoaded", function () {
 
-window.addEventListener('scroll', () => {
-  const currentScroll = window.scrollY;
-  if (currentScroll === lastScroll) return; // éviter calculs inutiles
-  lastScroll = currentScroll;
+    const hamburger = document.getElementById("hamburger");
+    const menu = document.getElementById("menu");
 
-  if (currentScroll > 50) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
-}, { passive: true }); // indique au navigateur que le scroll n’appelle pas preventDefault
+    if (!hamburger || !menu) return;
 
+    hamburger.addEventListener("click", function () {
+        menu.classList.toggle("active");
+    });
 
-
+});
